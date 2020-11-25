@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>studylog</title>
-    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/main.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="wrap">
@@ -13,32 +17,53 @@
         <h1 id="header-title"><a href="main.html">블로그 이름</a></h1>
         <ul id="header-nav">
             <li><a href="#">SQUARE</a></li>
-            <li><a href="#">REVIEW</a></li>
             <li><a href="#">POST</a></li>
+            <li><a href="#">REVIEW</a></li>
         </ul>
     </header>
 
-    <aside id="aside">
+    <aside id="aside" class="show">
         <div id="aside-userInfo">
             <!--            <img src="#" alt="user-img" />-->
             <i class="fas fa-user-circle"></i>
             <span id="aside-userInfo-id">Jinmin</span>
         </div>
+
+        <div id="aside-userInfo-details" class="hide">
+            <span class="aside-userInfo-details-email">jinmin@gmail.com</span>
+            <ul class="aside-userInfo-details-blogs">
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">진민의 Notion</strong>
+                    <span class="aside-userInfo-details-type">개인 블로그</span>
+                </li>
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">STUDYLOG</strong>
+                    <span class="aside-userInfo-details-type">팀 블로그</span>-
+                    <span class="aside-userInfo-details-typeCount">5</span>명
+                </li>
+            </ul>
+            <span class="aside-userInfo-details-mypage">내 정보 관리</span>
+            <span class="aside-userInfo-details-logout">로그아웃</span>
+        </div>
+
         <div id="aside-search">
             <input class="search" type="text" placeholder="검색"/>
             <i class="fas fa-search"></i>
         </div>
         <nav id="aside-nav">
             <h2 class="aside-nav-title">카테고리<i class="fas fa-caret-down"></i></h2>
-            <ul class="aside-nav-ul">
+            <ul class="aside-nav-ul show">
                 <li><a href="#">전체보기</a></li>
                 <li><a href="#">알고리즘</a></li>
                 <li><a href="#">자바스크립트</a></li>
                 <li><a href="#">자바</a></li>
                 <li><a href="#">기타</a></li>
             </ul>
-            <ul class="aside-nav-ul">
-                <h2 class="aside-nav-title">태그<i class="fas fa-caret-down"></i></h2>
+
+            <h2 class="aside-nav-title">태그<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
                 <li><a href="#">#</a></li>
             </ul>
         </nav>
@@ -46,9 +71,10 @@
             <i class="fas fa-cog"></i>
             <span id="aside-setting-text">블로그 설정</span>
         </div>
+        <i class="fas fa-angle-double-left show"></i>
     </aside>
 
-    <div id="main">
+    <div id="main" class="reduce">
         <div id="main-visual">
             <section class="main-visual-section">
                 <h2 class="main-visual-section-title">Recent Activity</h2>
@@ -132,7 +158,6 @@
                     </li>
                 </ul>
             </section>
-
 
             <section class="main-visual-section">
                 <h2 class="main-visual-section-title">게시글</h2>
