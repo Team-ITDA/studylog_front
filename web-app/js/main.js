@@ -49,13 +49,62 @@ function registerUserInfoClickEvent(){
 registerUserInfoClickEvent();
 
 
-// function init(){
-//     main top값에 대한 제어 연구중
-//     const mainContainer = document.querySelector("#main");
-//     const headerHeight = document.getElementById("header");
-//     const h = headerHeight.clientHeight;
-//     console.log(h);
-//     mainContainer.style.marginTop = h;
-// }
-//
-// init();
+function registerAsideNavTitleClickEvent(){
+    const asideNavTitles = document.querySelectorAll(".aside-nav-title");
+
+    asideNavTitles.forEach(function (title){
+        title.addEventListener("click", function () {
+            const controledAsideNavList = title.nextElementSibling;
+            const asideNavTitlesIcon = title.firstElementChild;
+            if (controledAsideNavList.classList.contains("show")) {
+                controledAsideNavList.classList.add("hide");
+                controledAsideNavList.classList.remove("show");
+                asideNavTitlesIcon.classList.add("hide");
+                asideNavTitlesIcon.classList.remove("show");
+            } else {
+                controledAsideNavList.classList.add("show");
+                controledAsideNavList.classList.remove("hide");
+                asideNavTitlesIcon.classList.add("show");
+                asideNavTitlesIcon.classList.remove("hide");
+            }
+        });
+    });
+/*    asideNavTitles.addEventListener("click", function (){
+        const controledAsideNavList = asideNavTitle.nextElementSibling;
+        if(controledAsideNavList.classList.contains("show")){
+           controledAsideNavList.classList.add("hide");
+           controledAsideNavList.classList.remove("show");
+        } else {
+            controledAsideNavList.classList.add("show");
+            controledAsideNavList.classList.remove("hide");
+        }
+    });*/
+}
+
+registerAsideNavTitleClickEvent();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

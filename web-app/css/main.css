@@ -10,6 +10,7 @@
     max-width: 1903px;
 }
 
+
 /* main 부분 */
 #main {
     position: relative;
@@ -18,16 +19,29 @@
     /*width: 88%;*/
     height: 100%;
     /*top: 60px;*/
-    top: 6%;
+    /*top: 6%;*/
     /*left: 12%;*/
     /*left: 230px;*/
     box-sizing: border-box;
-    padding: 5%;
+    /*padding: 6%;*/
+    padding: 70px 100px;
     /*padding-top: 6%;*/
     /*margin-top: 6%;*/
-    border: 1px solid #000;
+    margin-top: 60px;
+    /*border: 1px solid #000;*/
     /*max-width: 1673px;*/
     transition: all 1s;
+    overflow: auto;
+}
+
+#main.reduce{
+    width: 88%;
+    left: 12%;
+}
+#main.increase{
+    width: 100%;
+    left: 0%;
+    padding: 70px 150px;
 }
 
 #main-visual {
@@ -42,6 +56,10 @@
     /*height: 300px;*/
     border: 1px solid #000;
     margin-bottom: 50px;
+    /*margin-top: 50px;*/
+}
+.main-visual-section:last-child{
+    margin-bottom: 0px;
 }
 
 .main-visual-section-title {

@@ -161,6 +161,24 @@
     margin-left: 5px;
     cursor: pointer;
 }
+.aside-nav-title > .fas.show{
+
+}
+.aside-nav-title > .fas.hide{
+    transform: rotate(180deg);
+}
+.aside-nav-ul{
+
+}
+.aside-nav-ul.show{
+    display: block;
+    transition: all 1s;
+}
+.aside-nav-ul.hide{
+    display: none;
+    height: 0;
+    transition: all 1s;
+}
 
 .aside-nav-ul > li {
     margin-left: 30px;
@@ -206,13 +224,4 @@
     100% {
         opacity: 1;
     }
-}
-
-#main.reduce{
-    width: 88%;
-    left: 12%;
-}
-#main.increase{
-    width: 100%;
-    left: 0%;
 }
