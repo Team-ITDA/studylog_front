@@ -1,10 +1,18 @@
-function registerAsideButtonClickEvent() {
-    // asidebutton을 클릭했을 때 aside 보여주고 숨기는 기능
-    const asideContainer = document.querySelector("#aside");
-    const asideContainerButton = aside.querySelector(".fa-angle-double-left");
-    const mainContainer = document.querySelector("#main");
+const asideContainer = document.querySelector("#aside");
+const asideContainerButton = asideContainer.querySelector(".fa-angle-double-left");
 
-    asideContainerButton.addEventListener("click", function () {
+var isUserLoggedIn = false;
+var isUserInfoShow = false;
+const asideUserInfoContainer = asideContainer.querySelector("#aside-userInfo");
+
+const asideUserInfoDetailsContainer = asideContainer.querySelector("#aside-userInfo-details");
+const asideUserInfoDetailsLogoutButton = asideUserInfoDetailsContainer.querySelector(".aside-userInfo-details-logout");
+
+const asideNavTitles = document.querySelectorAll(".aside-nav-title");
+
+const registerAsideEventHandler = {
+    asideControlButton: function () {
+        const mainContainer = document.querySelector("#main");
         if (asideContainerButton.classList.contains("show")) {
             asideContainer.classList.add("hide");
             asideContainerButton.classList.add("hide");
@@ -20,103 +28,84 @@ function registerAsideButtonClickEvent() {
             mainContainer.classList.add("reduce");
             mainContainer.classList.remove("increase");
         }
-    });
-}
-
-registerAsideButtonClickEvent();
-
-var isUserLoggedIn = false;
-var isUserInfoShow = false;
-
-function registerUserInfoClickEvent() {
-    const userInfoArea = document.querySelector("#aside-userInfo");
-    if (isUserLoggedIn) {
-        // userInfo를 클릭했을 때 userInfoDetails를 보여주는 기능
-        userInfoArea.addEventListener("click", function () {
-            const userInfoDetail = userInfoArea.nextElementSibling;
-
+    },
+    asideUserInfoClick: function () {
+        if (isUserLoggedIn) {
+            // 유저가 로그인 한 상태에서 userInfo를 클릭했을 때 userInfoDetails를 보여주는 기능
             if (!isUserInfoShow) {
-                userInfoDetail.classList.add("show");
-                userInfoDetail.classList.remove("hide");
+                asideUserInfoDetailsContainer.classList.add("show");
+                asideUserInfoDetailsContainer.classList.remove("hide");
             } else {
-                userInfoDetail.classList.add("hide");
-                userInfoDetail.classList.remove("show");
+                asideUserInfoDetailsContainer.classList.add("hide");
+                asideUserInfoDetailsContainer.classList.remove("show");
             }
-
             isUserInfoShow = !isUserInfoShow;
-        });
-    } else {
-        userInfoArea.addEventListener("click", function (){
-            const loginArea = document.querySelector("#login");
-            loginArea.style.display = "block";
+        } else { // 유저가 로그인하지 않은 상태에서 로그인 모달창을 띄우는 기능
+            const loginContainer = document.querySelector("#login");
+            loginContainer.classList.remove("hide");
+            loginContainer.classList.add("show");
 
-            const loginAreaCloseButton = loginArea.querySelector(".login-area-closeButton");
-            loginAreaCloseButton.addEventListener("click", function (){
-                loginArea.style.display = "none";
+            const loginContainerCloseButton = loginContainer.querySelector(".login-area-closeButton");
+            loginContainerCloseButton.addEventListener("click", function () {
+                loginContainer.classList.add("hide");
+                loginContainer.classList.remove("show");
             });
 
-            const loginButtons = loginArea.querySelectorAll(".login-area-button");
-            const userInfoAreaId = userInfoArea.querySelector("#aside-userInfo-id");
-            loginButtons.forEach(function (button){
-                button.addEventListener("click", function (){
-                   isUserLoggedIn = !isUserLoggedIn;
-                   loginArea.style.display = "none";
-                   userInfoAreaId.innerHTML = "Jinmin";
+            // 아래 부분은 로그인 클릭에 대한 기능으로 임시로 css를 보기위해 넣어놨습니다.
+            const loginButtons = loginContainer.querySelectorAll(".login-area-button");
+            const userInfoContainerId = asideUserInfoContainer.querySelector("#aside-userInfo-id");
+            loginButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    isUserLoggedIn = true;
+                    loginContainer.classList.add("hide");
+                    loginContainer.classList.remove("show");
+                    userInfoContainerId.innerText = "Jinmin";
                 });
             });
-        });
-    }
-
-}
-
-registerUserInfoClickEvent();
-
-function registerAsideNavTitleClickEvent() {
-    const asideNavTitles = document.querySelectorAll(".aside-nav-title");
-
-    asideNavTitles.forEach(function (title) {
-        title.addEventListener("click", function () {
-            const controledAsideNavList = title.nextElementSibling;
-            const asideNavTitlesIcon = title.firstElementChild;
-            if (controledAsideNavList.classList.contains("show")) {
-                controledAsideNavList.classList.add("hide");
-                controledAsideNavList.classList.remove("show");
-                asideNavTitlesIcon.classList.add("hide");
-                asideNavTitlesIcon.classList.remove("show");
-            } else {
-                controledAsideNavList.classList.add("show");
-                controledAsideNavList.classList.remove("hide");
-                asideNavTitlesIcon.classList.add("show");
-                asideNavTitlesIcon.classList.remove("hide");
+        }
+    },
+    asideUserInfoDetailsLogoutButtonClick: function () {
+        const userInfoContainerId = asideUserInfoContainer.querySelector("#aside-userInfo-id");
+        isUserLoggedIn = false;
+        isUserInfoShow = false;
+        asideUserInfoDetailsContainer.classList.add("hide");
+        asideUserInfoDetailsContainer.classList.remove("show");
+        userInfoContainerId.innerText = "로그인 해주세요."
+    },
+    asideNavTitleClick: function (element) {
+        let title = element.target;
+        while (!title.classList.contains("aside-nav-title")) {   // h2가 아닌 i태그를 눌렀을때 오류를 이벤트 위임을 사용해봄.
+            title = title.parentNode;
+            if (title.nodeName === "BODY") {
+                title = null;
+                return;
             }
-        });
-    });
+        }
+        const controlledAsideNavList = title.nextElementSibling;
+        const asideNavTitleIcon = title.firstElementChild;
+        if (controlledAsideNavList.classList.contains("show")) {
+            controlledAsideNavList.classList.add("hide");
+            controlledAsideNavList.classList.remove("show");
+            asideNavTitleIcon.classList.add("hide");
+            asideNavTitleIcon.classList.remove("show");
+        } else {
+            controlledAsideNavList.classList.add("show");
+            controlledAsideNavList.classList.remove("hide");
+            asideNavTitleIcon.classList.add("show");
+            asideNavTitleIcon.classList.remove("hide");
+        }
+    }
 }
 
-registerAsideNavTitleClickEvent();
 
+asideContainerButton.addEventListener("click", registerAsideEventHandler.asideControlButton);
 
+asideUserInfoContainer.addEventListener("click", registerAsideEventHandler.asideUserInfoClick);
+asideUserInfoDetailsLogoutButton.addEventListener("click", registerAsideEventHandler.asideUserInfoDetailsLogoutButtonClick);
 
-
-
-
-
-
-
-function registerAsideLoginClickEvent() {
-
-}
-
-
-
-
-
-
-
-
-
-
-
+asideNavTitles.forEach(function (element) {
+    element.addEventListener("click", registerAsideEventHandler.asideNavTitleClick);
+});
 
 
 
