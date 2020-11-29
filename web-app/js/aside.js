@@ -77,7 +77,6 @@ const RegisterAsideEventHandler = {
         while (!title.classList.contains("aside-nav-title")) {   // h2가 아닌 i태그를 눌렀을때 오류를 이벤트 위임을 사용해봄.
             title = title.parentNode;
             if (title.nodeName === "BODY") {
-                title = null;
                 return;
             }
         }
@@ -98,6 +97,7 @@ const RegisterAsideEventHandler = {
 }
 
 
+
 asideContainerButton.addEventListener("click", RegisterAsideEventHandler.asideControlButton);
 
 asideUserInfoContainer.addEventListener("click", RegisterAsideEventHandler.asideUserInfoClick);
@@ -106,7 +106,10 @@ asideUserInfoDetailsLogoutButton.addEventListener("click", RegisterAsideEventHan
 asideNavTitles.forEach(function (element) {
     element.addEventListener("click", RegisterAsideEventHandler.asideNavTitleClick);
 });
-
+// 106행과 같은 기능인데 연구 후 맞는 방식으로 사용할 예정
+// for (const element of asideNavTitles) {
+//     element.addEventListener("click", RegisterAsideEventHandler.asideNavTitleClick);
+// }
 
 
 
