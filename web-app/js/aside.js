@@ -8,9 +8,9 @@ const asideUserInfoContainer = asideContainer.querySelector("#aside-userInfo");
 const asideUserInfoDetailsContainer = asideContainer.querySelector("#aside-userInfo-details");
 const asideUserInfoDetailsLogoutButton = asideUserInfoDetailsContainer.querySelector(".aside-userInfo-details-logout");
 
-const asideNavTitles = document.querySelectorAll(".aside-nav-title");
+const asideNavTitles = asideContainer.querySelectorAll(".aside-nav-title");
 
-const registerAsideEventHandler = {
+const RegisterAsideEventHandler = {
     asideControlButton: function () {
         const mainContainer = document.querySelector("#main");
         if (asideContainerButton.classList.contains("show")) {
@@ -98,16 +98,23 @@ const registerAsideEventHandler = {
 }
 
 
-asideContainerButton.addEventListener("click", registerAsideEventHandler.asideControlButton);
+asideContainerButton.addEventListener("click", RegisterAsideEventHandler.asideControlButton);
 
-asideUserInfoContainer.addEventListener("click", registerAsideEventHandler.asideUserInfoClick);
-asideUserInfoDetailsLogoutButton.addEventListener("click", registerAsideEventHandler.asideUserInfoDetailsLogoutButtonClick);
+asideUserInfoContainer.addEventListener("click", RegisterAsideEventHandler.asideUserInfoClick);
+asideUserInfoDetailsLogoutButton.addEventListener("click", RegisterAsideEventHandler.asideUserInfoDetailsLogoutButtonClick);
 
 asideNavTitles.forEach(function (element) {
-    element.addEventListener("click", registerAsideEventHandler.asideNavTitleClick);
+    element.addEventListener("click", RegisterAsideEventHandler.asideNavTitleClick);
 });
 
 
 
 
-
+/*
+이후에 구현해야할 것들
+ - 로그인 후 정보 영역에서 블로그리스트의 블로그를 눌렀을 때 이동기능
+ - 로그인 후 정보 영역에서 내 정보 관리 눌렀을 때 이동기능 + 페이지
+ - 검색기능에 대한 화면 이동
+ - nav 리스트에 대한 화면 이동
+ - 블로그 설정 페이지
+*/
