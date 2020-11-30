@@ -13,7 +13,7 @@ const HTTP_STATUS_CODE = {
 class RequestManager {
     loadFunction;
 
-    static setLoadAction(methods) {
+    static setLoadFunction(methods) {
         this.loadFunction = function () {
             const responseData = this.response;
 
