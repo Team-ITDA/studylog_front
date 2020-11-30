@@ -13,6 +13,7 @@ const HTTP_STATUS_CODE = {
 class RequestManager {
     loadFunction;
 
+    //parameter example : { OK : successMethod, FAIL : failMethod }
     static setLoadFunction(methods) {
         this.loadFunction = function () {
             const responseData = this.response;
@@ -40,6 +41,7 @@ class RequestManager {
         requestObject.readyState("load", this.loadFunction);
     }
 
+    //parameter example : sendData("POST", url, jsonObject)
     static sendData(httpMethod, url, data) {
         const requestObject = new XMLHttpRequest();
 
