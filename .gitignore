@@ -3,6 +3,10 @@
 *.iws
 *.iml
 *.ipr
+node_modules
+package-lock.json
+package.json
+index.js
 
 ### VS Code ###
 .vscode/
