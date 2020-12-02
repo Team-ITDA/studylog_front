@@ -1,0 +1,147 @@
+@charset "utf-8";
+@import url(reset.css);
+@import url(header.css);
+@import url(aside.css);
+
+
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1903px;
+}
+
+/* main 부분 */
+#main {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 70px 100px;
+    margin-top: 60px;
+    transition: all 1s;
+    overflow: auto;
+}
+
+#main.reduce {
+    width: 88%;
+    left: 12%;
+}
+
+#main.increase {
+    width: 100%;
+    left: 0%;
+    padding: 70px 150px;
+}
+
+#main-visual {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 정보 영역 */
+#myInfo{
+    border: 1px solid #000;
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 70%;
+    margin: 0 auto;
+}
+#myInfo-title{
+    font-size: 26px;
+    font-weight: bold;
+    margin: 15px 0;
+    text-indent: 10%;
+}
+.myInfo-bar{
+    display: block;
+    border: 1px solid #aaaaaa;
+    margin: 25px auto;
+    width: 85%;
+}
+
+.myInfo-container{
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+}
+.myInfo-container-titles{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.myInfo-photo-image{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+.myInfo-photo-uploadButton{
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px 0 0 0;
+}
+.myInfo-photo-uploadButton:hover,
+.myInfo-photo-uploadButton:active{
+    background: skyblue;
+    color: #ffffff;
+}
+.myInfo-information-labels{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-indent: 10px;
+}
+#myInfo-information-email{
+    display: block;
+    height: 36px;
+    font-size: 20px;
+    margin: 0 0 10px 10px;
+    text-indent: 10px;
+    box-sizing: border-box;
+}
+#myInfo-information-firstName,
+#myInfo-information-lastName{
+    display: block;
+    border: 1px solid #000;
+    width: 100%;
+    height: 36px;
+    font-size: 20px;
+    margin: 0 0 10px 10px;
+    text-indent: 10px;
+    box-sizing: border-box;
+}
+#myInfo-logout-button{
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    /*margin-left: 10px;*/
+
+}
+#myInfo-logout-button:hover,
+#myInfo-logout-button:active{
+    background: red;
+    color: #ffffff;
+}
+#myInfo-buttons-update,
+#myInfo-buttons-reset{
+    font-size: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 50px;
+}
+#myInfo-buttons-update:hover,
+#myInfo-buttons-update:active{
+    background: skyblue;
+    color: #ffffff;
+}
+
+#myInfo-buttons-reset:hover,
+#myInfo-buttons-reset:active{
+    background: #999999;
+}
