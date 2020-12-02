@@ -81,14 +81,14 @@
                 <span class="myInfo-bar"></span>
                 <div class="myInfo-photo myInfo-container">
                     <h3 class="myInfo-photo-title myInfo-container-titles">사진</h3>
-                    <img src="#" alt="myInfo-photo-myPhoto" class="myInfo-photo-image"/>
+                    <img src="#" alt="myInfo-photo-myPhoto" class="myInfo-photo-image" onerror="this.src = 'img/user_default_img.png'"/>
                     <button class="myInfo-photo-uploadButton">사진 업로드</button>
                 </div>
                 <span class="myInfo-bar"></span>
                 <div class="myInfo-information myInfo-container">
                     <h3 class="myInfo-information-title myInfo-container-titles">개인 정보</h3>
                     <label for="myInfo-information-email" class="myInfo-information-labels">이메일</label>
-                    <span id="myInfo-information-email">yangjinmin95@gmail.com</span>
+                    <input type="text" value="yangjinmin95@gmail.com" id="myInfo-information-email" readonly/>
                     <label for="myInfo-information-firstName" class="myInfo-information-labels">이름</label>
                     <input type="text" value="진민" id="myInfo-information-firstName"/>
                     <label for="myInfo-information-lastName" class="myInfo-information-labels">성</label>
@@ -102,9 +102,18 @@
                 <span class="myInfo-bar"></span>
                 <div class="myInfo-buttons myInfo-container">
                     <button id="myInfo-buttons-update">업데이트</button>
-                    <button id="myInfo-buttons-reset">취소</button>
+                    <button id="myInfo-buttons-reset" type="reset">취소</button>
                 </div>
             </form>
+        </div>
+    </div>
+    <div id="login" class="hide">
+        <div id="login-area">
+            <h1 id="login-area-title">로그인</h1>
+            <button class="login-area-button login-area-googleButton">Google로 계속하기</button>
+            <button class="login-area-button login-area-naverButton">Naver로 계속하기</button>
+            <button class="login-area-button login-area-kakaoButton">Kakao로 계속하기</button>
+            <i class="fas fa-times login-area-closeButton"></i>
         </div>
     </div>
 </div>
