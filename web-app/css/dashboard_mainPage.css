@@ -46,8 +46,8 @@
     margin: 0 auto;
 }
 .dashboard-pinnedIssues-title{
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 20px;
+    /*font-weight: bold;*/
 
 }
 .dashboard-pinnedIssues-lists{
@@ -63,7 +63,7 @@
     box-sizing: border-box;
     padding-top: 10px;
     text-indent: 5px;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 6px;
 }
 .dashboard-pinnedIssues-list-title{
@@ -77,7 +77,7 @@
 .dashboard-filter{
     position: relative;
     display: inline-block;
-    width: 70%;
+    width: 100%;
     height: 40px;
     border: 1px solid #000000;
     margin-top: 15px;
@@ -97,8 +97,9 @@
     position: absolute;
     top: 0;
     left: 90px;
-    width: 90%;
+    width: 70%;
     height: 40px;
+    border: 1px solid #000;
 }
 .dashboard-filter-input-icon{
     position: absolute;
@@ -115,12 +116,12 @@
     font-size: 18px;
 }
 .dashboard-newIssueButton{
-    position: relative;
+    position: absolute;
     right: 0;
     width: 100px;
     height: 40px;
     border: 1px solid #000000;
-    margin-left: 270px;
+    /*margin-left: 270px;*/
     border-radius: 6px;
     cursor: pointer;
 }
@@ -133,7 +134,8 @@
     margin-top: 30px;
     border: 1px solid #000;
 }
-.dashboard-lists-caption{
+.dashboard-lists-caption,
+.dashboard-lists > li:first-child{
     position: relative;
     height: 50px;
     border: 1px solid #000;
@@ -147,6 +149,97 @@
     /*margin: 15px 0 0 15px;*/
 }
 .dashboard-lists-caption-opensIcon{
+    position: absolute;
     font-size: 20px;
-    margin-top: 15px;
+    top: 15px;
+    left: 60px;
+}
+.dashboard-lists-caption-opens{
+    position: absolute;
+    font-size: 16px;
+    top: 13px;
+    left: 85px;
+}
+.dashboard-lists-caption-closesIcon{
+    position: absolute;
+    font-size: 20px;
+    top: 15px;
+    left: 170px;
+}
+.dashboard-lists-caption-closes{
+    position: absolute;
+    font-size: 16px;
+    top: 13px;
+    left: 195px;
+}
+.dashboard-lists-caption-assignees{
+    position: absolute;
+    font-size: 16px;
+    top: 15px;
+    right: 120px;
+}
+.dashboard-lists-caption-sorts{
+    position: absolute;
+    font-size: 16px;
+    top: 15px;
+    right: 30px;
+}
+
+.dashboard-lists > li{
+    position: relative;
+    height: 60px;
+    border: 1px solid #000;
+}
+.dashboard-lists-checkbox{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    left: 15px;
+}
+.dashboard-lists-opensIcon{
+    position: absolute;
+    font-size: 18px;
+    top: 15px;
+    left: 60px;
+}
+.dashboard-lists-subject{
+    position: absolute;
+    font-size: 18px;
+    top: 8px;
+    left: 85px;
+}
+.dashboard-lists-small{
+    position: absolute;
+    font-size: 13px;
+    top: 35px;
+    left: 85px;
+}
+.dashboard-lists-userImages{
+    position: absolute;
+    width: 30px;
+    top: 15px;
+    right: 125px;
+}
+.dashboard-lists-userImage-02{
+    right: 130px;
+}
+.dashboard-lists-userImage-03{
+    right: 135px;
+}
+.dashboard-lists-userImage-04{
+    right: 140px;
+}
+.dashboard-lists-userImage-05{
+    right: 145px;
+}
+.dashboard-lists-userImage-06{
+    right: 150px;
+}
+
+.dashboard-lists-comment{
+    position: absolute;
+    font-size: 20px;
+    top: 16px;
+    right: 30px;
 }
