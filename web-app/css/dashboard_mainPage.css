@@ -209,6 +209,15 @@
     top: 8px;
     left: 85px;
 }
+.dashboard-lists-subject-notice{
+    /*border: 1px solid #000000;*/
+    border-radius: 15px;
+    padding: 0 7px;
+    margin-left: 10px;
+    background: yellow;
+    font-weight: bold;
+    font-size: 16px;
+}
 .dashboard-lists-small{
     position: absolute;
     font-size: 13px;
