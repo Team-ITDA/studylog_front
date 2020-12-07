@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>studylog</title>
+
+    <link rel="stylesheet" href="css/dashboard_mainPage.css">
+
+    <script src="js/aside.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="wrap">
+
+    <header id="header">
+        <h1 id="header-title"><a href="main.html">블로그 이름</a></h1>
+        <ul id="header-nav">
+            <li><a href="#">DASHBORAD</a></li>
+            <li><a href="#">POST</a></li>
+            <li><a href="#">REVIEW</a></li>
+        </ul>
+    </header>
+
+    <aside id="aside" class="show">
+        <div id="aside-userInfo">
+            <!--            <img src="#" alt="user-img" />-->
+            <i class="fas fa-user-circle"></i>
+            <span id="aside-userInfo-id">Jinmin</span>
+        </div>
+
+        <div id="aside-userInfo-details" class="hide">
+            <span class="aside-userInfo-details-email">jinmin@gmail.com</span>
+            <ul class="aside-userInfo-details-blogs">
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">진민의 Notion</strong>
+                    <span class="aside-userInfo-details-type">개인 블로그</span>
+                </li>
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">STUDYLOG</strong>
+                    <span class="aside-userInfo-details-type">팀 블로그</span>-
+                    <span class="aside-userInfo-details-typeCount">5</span>명
+                </li>
+            </ul>
+            <span class="aside-userInfo-details-mypage">내 정보 관리</span>
+            <span class="aside-userInfo-details-logout">로그아웃</span>
+        </div>
+
+        <div id="aside-search">
+            <input class="search" type="text" placeholder="검색"/>
+            <i class="fas fa-search"></i>
+        </div>
+        <nav id="aside-nav">
+            <h2 class="aside-nav-title">카테고리<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">전체보기</a></li>
+                <li><a href="#">알고리즘</a></li>
+                <li><a href="#">자바스크립트</a></li>
+                <li><a href="#">자바</a></li>
+                <li><a href="#">기타</a></li>
+            </ul>
+
+            <h2 class="aside-nav-title">태그<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">#</a></li>
+            </ul>
+        </nav>
+        <div id="aside-setting">
+            <i class="fas fa-cog"></i>
+            <span id="aside-setting-text">블로그 설정</span>
+        </div>
+        <i class="fas fa-angle-double-left show"></i>
+    </aside>
+
+    <div id="main" class="reduce">
+        <div id="main-visual">
+            <div id="dashboard">
+                <h2 class="dashboard-pinnedIssues-title">Pinned issues</h2>
+                <ul class="dashboard-pinnedIssues-lists">
+                    <li>
+                        <h3 class="dashboard-pinnedIssues-list-title">
+                            <i class="fas fa-ellipsis-v"></i>
+                            <a href="#">StudyHub PR & Commit 주의사항</a>
+                        </h3>
+                        <div class="dashboard-pinnedIssues-list-small">
+                            <span class="dashboard-pinnedIssues-list-small-team">TEAM-ITDA</span>/
+                            <span class="dashboard-pinnedIssues-list-small-folder">studyhub</span>
+                        </div>
+                    </li>
+                    <li>
+                        <h3 class="dashboard-pinnedIssues-list-title">
+                            <i class="fas fa-ellipsis-v"></i>
+                            <a href="#">StudyHub 글 작성 & 리뷰 방법 공지드립니다.</a>
+                        </h3>
+                        <div class="dashboard-pinnedIssues-list-small">
+                            <span class="dashboard-pinnedIssues-list-small-team">TEAM-ITDA</span>/
+                            <span class="dashboard-pinnedIssues-list-small-folder">studyhub</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="dashboard-filter">
+                    <button class="dashboard-filter-show">Filters <i class="fas fa-caret-down"></i></button>
+
+                    <div class="dashboard-filter-input">
+                        <i class="fas fa-search dashboard-filter-input-icon"></i>
+                        <input type="text" class="dashboard-filter-input-text"/>
+                    </div>
+                </div>
+                <button class="dashboard-newIssueButton">New issue</button>
+
+                <ul class="dashboard-lists">
+                    <li class="dashboard-lists-caption">
+                        <input type="checkbox" class="dashboard-lists-caption-checkbox">
+                        <i class="fas fa-exclamation-circle dashboard-lists-caption-opensIcon"></i>
+                        <span class="dashboard-lists-caption-opens">7 Open</span>
+                        <i class="fas fa-check"></i>
+                        <span class="dashboard-lists-caption-closes">16 Closed</span>
+
+                        <span class="dashboard-lists-caption-assignees">Assignee <i class="fas fa-caret-down"></i></span>
+                        <span class="dashboard-lists-caption-sorts">Sort <i class="fas fa-caret-down"></i></span>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="dashboard-lists-checkbox">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 class="dashboard-lists-subject"><a href="#">java final keyword</a></h3>
+                        <div class="dashboard-lists-small">
+                            <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                        </div>
+                        <img src="#" alt="dashboard-lists-userImage-01" class="dashboard-lists-userImage-01" onerror="this.src = 'img/user_default_img.png'" />
+                        <div class="dashboard-lists-comment">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="dashboard-lists-comment-count">1</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="dashboard-lists-checkbox">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 class="dashboard-lists-subject"><a href="#">RestControllerAdvice</a></h3>
+                        <div class="dashboard-lists-small">
+                            <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                        </div>
+                        <img src="#" alt="dashboard-lists-userImage-02" class="dashboard-lists-userImage-02" onerror="this.src = 'img/user_default_img.png'" />
+                        <div class="dashboard-lists-comment">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="dashboard-lists-comment-count">2</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="dashboard-lists-checkbox">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 class="dashboard-lists-subject"><a href="#">StudyHub PR & 커밋 시 주의사항</a><span class="dashboard-lists-subject-notice">notice</span></h3>
+                        <div class="dashboard-lists-small">
+                            <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                        </div>
+                        <img src="#" alt="dashboard-lists-userImage-01" class="dashboard-lists-userImage-01" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-02" class="dashboard-lists-userImage-02" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-03" class="dashboard-lists-userImage-03" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-04" class="dashboard-lists-userImage-04" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-05" class="dashboard-lists-userImage-05" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-06" class="dashboard-lists-userImage-06" onerror="this.src = 'img/user_default_img.png'" />
+                        <div class="dashboard-lists-comment">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="dashboard-lists-comment-count">2</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="dashboard-lists-checkbox">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 class="dashboard-lists-subject"><a href="#">StudyHub 글 작성 & 리뷰 방법 공지드립니다.</a><span class="dashboard-lists-subject-notice">notice</span></h3>
+                        <div class="dashboard-lists-small">
+                            <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                        </div>
+                        <img src="#" alt="dashboard-lists-userImage-01" class="dashboard-lists-userImage-01" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-02" class="dashboard-lists-userImage-02" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-03" class="dashboard-lists-userImage-03" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-04" class="dashboard-lists-userImage-04" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-05" class="dashboard-lists-userImage-05" onerror="this.src = 'img/user_default_img.png'" />
+                        <img src="#" alt="dashboard-lists-userImage-06" class="dashboard-lists-userImage-06" onerror="this.src = 'img/user_default_img.png'" />
+                        <div class="dashboard-lists-comment">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="dashboard-lists-comment-count">5</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="dashboard-lists-checkbox">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 class="dashboard-lists-subject"><a href="#">Spring MVC 기본 동작 흐름</a></h3>
+                        <div class="dashboard-lists-small">
+                            <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                        </div>
+                        <img src="#" alt="dashboard-lists-userImage-01" class="dashboard-lists-userImage-01" onerror="this.src = 'img/user_default_img.png'" />
+                       <div class="dashboard-lists-comment">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="dashboard-lists-comment-count">5</span>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" class="dashboard-lists-checkbox">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3 class="dashboard-lists-subject"><a href="#">exception class</a></h3>
+                        <div class="dashboard-lists-small">
+                            <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                        </div>
+                        <img src="#" alt="dashboard-lists-userImage-01" class="dashboard-lists-userImage-01" onerror="this.src = 'img/user_default_img.png'" />
+                        <div class="dashboard-lists-comment">
+                            <i class="far fa-comment-alt"></i>
+                            <span class="dashboard-lists-comment-count">1</span>
+                        </div>
+                    </li>
+                    <input type="checkbox" class="dashboard-lists-checkbox">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3 class="dashboard-lists-subject"><a href="#">javascript parser</a></h3>
+                    <div class="dashboard-lists-small">
+                        <span class="dashboard-lists-small-team">TEAM-ITDA</span>/<span class="dashboard-lists-small-folder">studyhub</span>
+                    </div>
+                    <img src="#" alt="dashboard-lists-userImage-01" class="dashboard-lists-userImage-01" onerror="this.src = 'img/user_default_img.png'" />
+                    <div class="dashboard-lists-comment">
+                        <i class="far fa-comment-alt"></i>
+                        <span class="dashboard-lists-comment-count">3</span>
+                    </div>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="login" class="hide">
+        <div id="login-area">
+            <h1 id="login-area-title">로그인</h1>
+            <button class="login-area-button login-area-googleButton">Google로 계속하기</button>
+            <button class="login-area-button login-area-naverButton">Naver로 계속하기</button>
+            <button class="login-area-button login-area-kakaoButton">Kakao로 계속하기</button>
+            <i class="fas fa-times login-area-closeButton"></i>
+        </div>
+    </div>
+</div>
+</body>
+</html>
