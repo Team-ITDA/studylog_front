@@ -81,7 +81,7 @@
 #myBlog-members-inviteLink{
     display: inline-block;
     border: 1px solid #000;
-    width: 85%;
+    width: 86.5%;
     height: 36px;
     font-size: 20px;
     margin: 0 0 10px 10px;
@@ -101,8 +101,14 @@
     width: 12%;
     height: 36px;
     border: 1px solid #000;
-    margin: 0 0 10px 10px;
+    /*margin: 0 0 10px 10px;*/
     float: right;
+    cursor: pointer;
+}
+#myBlog-members-inviteLinkButton:hover,
+#myBlog-members-inviteLinkButton:active{
+    background: skyblue;
+    color: #ffffff;
 }
 #myBlog-members-inviteLinkButton:after{
     display: block;
@@ -125,6 +131,12 @@
     height: 36px;
     border: 1px solid #000;
     margin: 0 0 10px 10px;
+    cursor: pointer;
+}
+#myBlog-membersList-addButton:hover,
+#myBlog-membersList-addButton:active{
+    background: skyblue;
+    color: #ffffff;
 }
 #myBlog-membersList-search{
     display: inline-block;
@@ -176,9 +188,15 @@
 }
 .myBlog-membersList-users-list-accessLevel{
     float: right;
-    margin-top: -33px;
+    margin-top: -39px;
     border: 1px solid #000;
     font-size: 16px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.myBlog-membersList-users-list-accessLevel:hover,
+.myBlog-membersList-users-list-accessLevel:active{
+    background: #cccccc;
 }
 .myBlog-bar-inside{
     width: 100%;
