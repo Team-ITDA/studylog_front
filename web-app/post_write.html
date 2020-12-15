@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>studylog</title>
+
+    <link rel="stylesheet" href="css/post_write.css">
+    <!-- Editor's Dependency Style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <!-- Editor's Style -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-grid/v4.10.0/tui-grid.min.css">
+
+    <script src="js/aside.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
+    <script src="js/post_write.js" defer></script>
+</head>
+<body>
+<div id="wrap">
+
+    <header id="header" class="header">
+        <h1 id="header-title" class="header-title"><a href="main.html">블로그 이름</a></h1>
+        <ul id="header-nav" class="header-nav">
+            <li><a href="#">DASHBORAD</a></li>
+            <li><a href="#">POST</a></li>
+            <li><a href="#">REVIEW</a></li>
+        </ul>
+    </header>
+
+    <aside id="aside" class="show">
+        <div id="aside-userInfo">
+            <!--            <img src="#" alt="user-img" />-->
+            <i class="fas fa-user-circle"></i>
+            <span id="aside-userInfo-id">Jinmin</span>
+        </div>
+
+        <div id="aside-userInfo-details" class="hide">
+            <span class="aside-userInfo-details-email">jinmin@gmail.com</span>
+            <ul class="aside-userInfo-details-blogs">
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">진민의 Notion</strong>
+                    <span class="aside-userInfo-details-type">개인 블로그</span>
+                </li>
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">STUDYLOG</strong>
+                    <span class="aside-userInfo-details-type">팀 블로그</span>-
+                    <span class="aside-userInfo-details-typeCount">5</span>명
+                </li>
+            </ul>
+            <span class="aside-userInfo-details-mypage">내 정보 관리</span>
+            <span class="aside-userInfo-details-logout">로그아웃</span>
+        </div>
+
+        <div id="aside-search">
+            <input class="search" type="text" placeholder="검색"/>
+            <i class="fas fa-search"></i>
+        </div>
+        <nav id="aside-nav">
+            <h2 class="aside-nav-title">카테고리<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">전체보기</a></li>
+                <li><a href="#">알고리즘</a></li>
+                <li><a href="#">자바스크립트</a></li>
+                <li><a href="#">자바</a></li>
+                <li><a href="#">기타</a></li>
+            </ul>
+
+            <h2 class="aside-nav-title">태그<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">#</a></li>
+            </ul>
+        </nav>
+        <div id="aside-setting">
+            <i class="fas fa-cog"></i>
+            <span id="aside-setting-text">블로그 설정</span>
+        </div>
+        <i class="fas fa-angle-double-left show"></i>
+    </aside>
+
+    <div id="main" class="main reduce">
+        <div id="mainVisual" class="main-visual">
+            <div id="editor" class="editor">
+                <select id="editorCategory" class="editor-category">
+                    <option value="">카테고리를 선택하세요.</option>
+                    <option value="알고리즘">알고리즘</option>
+                    <option value="자바스크립트">자바스크립트</option>
+                    <option value="자바">자바</option>
+                    <option value="기타">기타</option>
+                </select>
+                <input type="text" id="editorTitle" class="editor-title" placeholder="제목을 입력하세요.">
+                <div id="editorInput" class="editor-input">
+                </div>
+                <div class="editor-buttons">
+                    <button id="editorSave" class="editor-buttons-save">저장</button>
+                    <button id="editorReset" class="editor-buttons-reset">취소</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="login" class="hide">
+        <div id="login-area">
+            <h1 id="login-area-title">로그인</h1>
+            <button class="login-area-button login-area-googleButton">Google로 계속하기</button>
+            <button class="login-area-button login-area-naverButton">Naver로 계속하기</button>
+            <button class="login-area-button login-area-kakaoButton">Kakao로 계속하기</button>
+            <i class="fas fa-times login-area-closeButton"></i>
+        </div>
+    </div>
+</div>
+</body>
+</html>
