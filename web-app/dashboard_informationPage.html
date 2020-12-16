@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>studylog</title>
+
+    <link rel="stylesheet" href="css/dashboard_informationPage.css">
+    <!-- Editor's Dependency Style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <!-- Editor's Style -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-grid/v4.10.0/tui-grid.min.css">
+
+    <script src="js/aside.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
+    <script src="js/dashboard_output.js" defer></script>
+</head>
+<body>
+<div id="wrap">
+
+    <header id="header">
+        <h1 id="header-title"><a href="main.html">블로그 이름</a></h1>
+        <ul id="header-nav">
+            <li><a href="#">DASHBORAD</a></li>
+            <li><a href="#">POST</a></li>
+            <li><a href="#">REVIEW</a></li>
+        </ul>
+    </header>
+
+    <aside id="aside" class="show">
+        <div id="aside-userInfo">
+            <!--            <img src="#" alt="user-img" />-->
+            <i class="fas fa-user-circle"></i>
+            <span id="aside-userInfo-id">Jinmin</span>
+        </div>
+
+        <div id="aside-userInfo-details" class="hide">
+            <span class="aside-userInfo-details-email">jinmin@gmail.com</span>
+            <ul class="aside-userInfo-details-blogs">
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">진민의 Notion</strong>
+                    <span class="aside-userInfo-details-type">개인 블로그</span>
+                </li>
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">STUDYLOG</strong>
+                    <span class="aside-userInfo-details-type">팀 블로그</span>-
+                    <span class="aside-userInfo-details-typeCount">5</span>명
+                </li>
+            </ul>
+            <span class="aside-userInfo-details-mypage">내 정보 관리</span>
+            <span class="aside-userInfo-details-logout">로그아웃</span>
+        </div>
+
+        <div id="aside-search">
+            <input class="search" type="text" placeholder="검색"/>
+            <i class="fas fa-search"></i>
+        </div>
+        <nav id="aside-nav">
+            <h2 class="aside-nav-title">카테고리<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">전체보기</a></li>
+                <li><a href="#">알고리즘</a></li>
+                <li><a href="#">자바스크립트</a></li>
+                <li><a href="#">자바</a></li>
+                <li><a href="#">기타</a></li>
+            </ul>
+
+            <h2 class="aside-nav-title">태그<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">#</a></li>
+            </ul>
+        </nav>
+        <div id="aside-setting">
+            <i class="fas fa-cog"></i>
+            <span id="aside-setting-text">블로그 설정</span>
+        </div>
+        <i class="fas fa-angle-double-left show"></i>
+    </aside>
+
+    <div id="main" class="reduce">
+        <div class="main-visual">
+            <div class="dashboard">
+                <h2 class="dashboard-title">StudyHub PR & 커밋 시 주의사항</h2>
+                <h3 class="dashboard-writer">zeroGone</h3>
+                <div class="dashboard-buttons">
+                    <button class="dashboard-buttons-delete dashboard-buttons-button">Delete</button>
+                    <button class="dashboard-buttons-edit dashboard-buttons-button">Edit</button>
+                    <button class="dashboard-buttons-newIssue dashboard-buttons-button">New issue</button>
+                </div>
+                <div id="editorInput" class="dashboard-editorInput">
+
+                </div>
+                <div id="editorOutput" class="dashboard-editorOutput">
+
+                </div>
+                <span class="dashboard-bar"></span>
+                <form class="dashboard-comment">
+                    <ul class="dashboard-comment-lists">
+                        <li class="dashboard-comment-lists-item">
+                            <div class="dashboard-comment-lists-item-01 dashboard-comment-lists-item-numbers">
+                                <span class="dashboard-comment-lists-item-numbers-text">잘 보았습니다.</span>
+                                <span class="dashboard-comment-lists-item-numbers-user">Jinmin</span>
+                            </div>
+                        </li>
+                        <li class="dashboard-comment-lists-item">
+                            <div class="dashboard-comment-lists-item-02 dashboard-comment-lists-item-numbers">
+                                <span class="dashboard-comment-lists-item-numbers-text">유익한 내용 감사합니다.</span>
+                                <span class="dashboard-comment-lists-item-numbers-user">zeroGone</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <textarea class="dashboard-comment-input" placeholder="댓글을 입력하세요.">
+
+                    </textarea>
+                    <button class="dashboard-comment-inputButton">댓글 작성</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="login" class="hide">
+        <div id="login-area">
+            <h1 id="login-area-title">로그인</h1>
+            <button class="login-area-button login-area-googleButton">Google로 계속하기</button>
+            <button class="login-area-button login-area-naverButton">Naver로 계속하기</button>
+            <button class="login-area-button login-area-kakaoButton">Kakao로 계속하기</button>
+            <i class="fas fa-times login-area-closeButton"></i>
+        </div>
+    </div>
+</div>
+</body>
+</html>
