@@ -12,14 +12,28 @@
 </head>
 <body>
 <div id="wrap">
+    <header class="header">
+        <h1 class="header-title">
+            <a href="main.html">블로그 이름</a>
+        </h1>
 
-    <header id="header">
-        <h1 id="header-title"><a href="main.html">블로그 이름</a></h1>
-        <ul id="header-nav">
-            <li><a href="#">DASHBORAD</a></li>
-            <li><a href="#">POST</a></li>
-            <li><a href="#">REVIEW</a></li>
+        <a href="main.html" class="header-user">
+            <i class="fas fa-user-circle header-user-icon"></i>
+            <div class="header-user-text">로그인 해주세요</div>
+        </a>
+
+        <ul class="header-nav">
+            <li class="header-nav-item"><a href="#">대시보드</a></li>
+            <li class="header-nav-item"><a href="#">리뷰</a></li>
+            <li class="header-nav-item"><a href="#">포스트</a></li>
         </ul>
+
+        <div class="header-search">
+            <button class="header-search-icon">
+                <i class="fas fa-search"></i>
+            </button>
+            <input class="header-search-input" type="text" placeholder="검색"/>
+        </div>
     </header>
 
     <aside id="aside" class="show">
@@ -188,7 +202,7 @@
                             <span class="main-visual-list-folder">studyhub</span>
                         </div>
                         <div class="main-visual-list-assignee">
-                            <!--                        <img src="#" alt="assignee_01">-->
+                            <!-- <img src="#" alt="assignee_01">-->
                             <i class="fas fa-user-circle"></i>
                         </div>
                         <div class="main-visual-list-comment">
