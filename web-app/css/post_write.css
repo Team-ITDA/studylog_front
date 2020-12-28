@@ -1,0 +1,96 @@
+@charset "utf-8";
+@import url(reset.css);
+@import url(header.css);
+@import url(aside.css);
+
+
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1903px;
+}
+
+/* main 부분 */
+#main {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 70px 100px;
+    margin-top: 60px;
+    transition: all 1s;
+    overflow: auto;
+}
+
+#main.reduce {
+    width: 88%;
+    left: 12%;
+}
+
+#main.increase {
+    width: 100%;
+    left: 0%;
+    padding: 70px 150px;
+}
+
+#main-visual {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.editor{
+    /*height: auto !important;*/
+    /*border: 1px solid #000;*/
+}
+.editor-category{
+    display: block;
+    box-sizing: border-box;
+    padding: 5px;
+    /*font-size: 14px;*/
+}
+.editor-title{
+    height: auto;
+    margin: 10px 0;
+    font-size: 30px;
+}
+.editor-title::placeholder{
+    font-size: 30px;
+}
+.editor-buttons{
+    text-align: center;
+}
+.CodeMirror-sizer{
+    /*border-right: none !important;*/
+    /*padding-right: 30px !important;*/
+}
+.CodeMirror-scroll{
+    /*overflow: visible !important;*/
+}
+.CodeMirror-vscrollbar{
+    /*display: none !important;*/
+}
+button.editor-buttons-save,
+button.editor-buttons-reset{
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 10px 35px;
+    border: 1px solid #999999;
+    font-size: 18px;
+    cursor: pointer;
+}
+button.editor-buttons-save{
+    margin-right: 30px;
+}
+button.editor-buttons-save:hover,
+button.editor-buttons-save:active{
+    background: skyblue;
+    color: #ffffff;
+}
+button.editor-buttons-reset:hover,
+button.editor-buttons-reset:active{
+    background: #cccccc;
+    color: #ffffff;
+}
