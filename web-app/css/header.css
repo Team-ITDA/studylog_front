@@ -1,16 +1,19 @@
+@import url(reset.css);
+
 .header {
+    font-weight: bold;
     z-index: 1;
     box-sizing: border-box;
     padding-top: 10px;
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: ghostwhite;
 }
 
 .header-title {
     display: inline-block;
     margin-left: 50px;
+    font-weight: bold;
 }
 
 .header-title:hover,
@@ -22,25 +25,28 @@
 .header-search {
     width: 300px;
     float: right;
-    background-color: white;
-    margin-top: 5px;
+    margin-top: 3px;
     margin-right: 20px;
     font-size: large;
-    border-radius: 5%;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.header-search.focus {
+    box-shadow: 1px 1px 2px 1px var(--main-color);
+}
+
+.header-search.focusout {
+    box-shadow: none;
 }
 
 .header-search-icon {
-    border-radius: 10%;
-    border: solid 1px ghostwhite;
     font-size: larger;
+    cursor: pointer;
 }
 
 .header-search-icon:hover {
-    background-color: lightgray;
-}
-
-.header-search-icon:active {
-    color: ghostwhite;
+    color: var(--main-color);
 }
 
 .header-search-input {
@@ -57,24 +63,187 @@
     float: left;
     margin-left: 30px;
     font-size: 24px;
-    border-bottom: 1px solid lightgray;
-    font-weight: bold;
-}
-
-.header-user {
-    width: 200px;
-    float: right;
     text-align: center;
 }
 
-.header-user-icon {
+.header-nav-item:hover {
+    text-shadow: 2px 2px 3px var(--main-color);
+}
+
+.header-login-button {
+    width: 200px;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header-login-button:hover,
+.header-login-button:active {
+    transition: all 0.5s;
+    transform: scale(1.05);
+}
+
+.header-login-button-icon {
     margin-top: 3px;
     display: inline-block;
     vertical-align: middle;
     font-size: 32px;
 }
 
-.header-user-text {
+.header-login-text {
     display: inline-block;
     vertical-align: middle;
+}
+
+.login-container {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 0.5s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.login-container.show {
+    display: block;
+}
+
+.login-container.hide {
+    display: none;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background: whitesmoke;
+}
+
+.login-img-article {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.login-article {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.login-img {
+    height: 100%;
+}
+
+.login-title {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #2F4F4F;
+    margin-top: 80px;
+}
+
+.login-button {
+    display: block;
+    margin: 40px auto;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
+}
+
+.login-button:hover {
+    transition: all 0.5s;
+    transform: scale(1.05);
+}
+
+.login-button-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+}
+
+.login-button-text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.google-login-button {
+    background: white;
+}
+
+.google-login-icon {
+    background: transparent url('../img/login/google_login_button_icon.svg') 5px 50% no-repeat;
+}
+
+.naver-login-button {
+    background: #1EC800;
+}
+
+.naver-login-text {
+    color: white;
+}
+
+.kakao-login-button {
+    background: #FEE500;
+}
+
+.login-area-closeButton {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: xx-large;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.login-area-closeButton:hover,
+.login-area-closeButton:active {
+    opacity: 1;
 }
