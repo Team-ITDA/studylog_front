@@ -1,6 +1,4 @@
 class Header {
-    #isUserContainerShow = false;
-
     #searchContainer = document.querySelector(".header-search");
     #loginContainer = document.querySelector(".login-container");
 
@@ -32,16 +30,15 @@ class Header {
     }
 
     #showOrHideUserContainer() {
-        if (this.#isUserContainerShow) {
-            document.querySelector(".user-container").classList.add("hide");
-            document.querySelector(".fa-angle-down").classList.remove("hide");
-            document.querySelector(".fa-angle-up").classList.add("hide");
-        } else {
+        if (document.querySelector(".user-container").classList.contains("hide")) {
             document.querySelector(".user-container").classList.remove("hide");
             document.querySelector(".fa-angle-down").classList.add("hide");
             document.querySelector(".fa-angle-up").classList.remove("hide");
+        } else {
+            document.querySelector(".user-container").classList.add("hide");
+            document.querySelector(".fa-angle-down").classList.remove("hide");
+            document.querySelector(".fa-angle-up").classList.add("hide");
         }
-        this.#isUserContainerShow = !this.#isUserContainerShow;
     }
 
     #login(event) {
