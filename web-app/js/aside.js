@@ -18,11 +18,13 @@ class SideBar {
             this.#container.classList.remove("hide");
             this.#containerControlButton.classList.add("show");
             this.#containerControlButton.classList.remove("hide");
+            mainContainer.reduce();
         } else {
             this.#container.classList.add("hide");
             this.#container.classList.remove("show");
             this.#containerControlButton.classList.add("hide");
             this.#containerControlButton.classList.remove("show");
+            mainContainer.expand();
         }
     }
 
