@@ -1,0 +1,159 @@
+@charset "utf-8";
+@import url(reset.css);
+@import url(header.css);
+@import url(aside.css);
+
+
+#wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1903px;
+}
+
+/* main 부분 */
+#main {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 70px 100px;
+    margin-top: 60px;
+    transition: all 1s;
+    overflow: auto;
+}
+
+#main.reduce {
+    width: 88%;
+    left: 12%;
+}
+
+#main.increase {
+    width: 100%;
+    left: 0%;
+    padding: 70px 150px;
+}
+
+#main-visual {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.dashboard-editorInput{
+    display: none;
+}
+.dashboard-editorOutput{
+    box-sizing: border-box;
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+.dashboard-title{
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.dashboard-writer{
+    /*display: inline-block;*/
+}
+
+.dashboard-buttons{
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*float: right;*/
+    /*border: 1px solid #000;*/
+}
+
+.dashboard-buttons-button{
+    box-sizing: border-box;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border: 1px solid #999999;
+    border-radius: 5px;
+}
+.dashboard-buttons-newIssue{
+    background-color: palegreen;
+}
+.dashboard-buttons-button:hover{
+    background-color: #cccccc;
+}
+
+/*
+.dashboard-bar{
+    display: block;
+    width: 100%;
+    border: 1px solid #999999;
+}*/
+
+.dashboard-comment{
+
+}
+
+.dashboard-comment-lists{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+.dashboard-comment-lists-item{
+    display: block;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+}
+.dashboard-comment-lists-item-numbers{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.dashboard-comment-lists-item-numbers-text{
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+.dashboard-comment-lists-item-numbers-user{
+    float: right;
+    width: 10%;
+    height: 100%;
+}
+.dashboard-comment-lists-item-numbers::after{
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.dashboard-comment-input{
+    display: block;
+    width: 99.5%;
+    min-height: 100px;
+    margin: 0 auto;
+}
+
+.dashboard-comment-inputButton{
+    display: block;
+    float: right;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    background-color: skyblue;
+    color: #ffffff;
+    font-size: 16px;
+}
+.dashboard-comment-inputButton:hover{
+    background-color: #999999;
+}
