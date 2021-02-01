@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
+:root {
+    --main-color: #2F4F4F;
+}
+
 /*reset*/
 html, body, div, ul, ol, li, dl, dt, dd, p, address, h1, h2, h3, h4, h5, h6, blockquote, table, tr, th, td, caption, form, fieldset, legend, header, article, nav, section, main, footer, figure, aside {
     margin: 0;
@@ -105,4 +109,3 @@ html {
 body {
     font: 1.4rem 'Noto Sans KR', 'sans-serif';
 }
-

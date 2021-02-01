@@ -1,313 +1,88 @@
-@charset "utf-8";
 @import url(reset.css);
 
-/* aside 부분 */
-#aside {
+.sidebar {
     position: fixed;
-    z-index: 10;
-    /*top: 60px;*/
-    top: 6%;
-    /*width: 230px;*/
-    width: 12%;
-    border: 1px solid #000;
+    z-index: 1;
+    padding-top: 60px;
+    width: 240px;
     height: 100%;
-    /*min-width: 190px;*/
     transition: all 1s;
+    box-shadow: 0 1px 3px 1px var(--main-color);
+    text-align: center;
 }
 
-#aside.show{
+.sidebar.show {
     left: 0;
 }
-#aside.hide{
-    left: -12%;
-}
 
-#aside-userInfo {
-    width: 100%;
-    /*height: 60px;*/
-    height: 6%;
-    line-height: 2.9;
-    border: 1px solid #000;
-    /*line-height: 60px;*/
-    text-align: center;
-    font-size: 20px;
-    cursor: pointer;
-}
-#aside-userInfo-details{
-    position: fixed;
-    z-index: 20;
-    top: 12%;
-    left: 70px;
-    width: 200px;
-    border: 1px solid #000;
-    background: #fff;
-}
-#aside-userInfo-details.show{
-    /*display: block;*/
-    opacity: 1;
-    visibility: visible;
-}
-#aside-userInfo-details.hide{
-    /*display: none;*/
-    opacity: 0;
-    visibility: hidden;
-}
-
-.aside-userInfo-details-email{
-    display: block;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-}
-.aside-userInfo-details-blogs{
-
-}
-.aside-userInfo-details-blogs > li{
-    width: 100%;
-    height: 50px;
-    /*border: 1px solid #000;*/
-    cursor: pointer;
-}
-.aside-userInfo-details-blogs > li:hover,
-.aside-userInfo-details-blogs > li:active{
-    background: #ccc;
-}
-.aside-userInfo-details-blogs > li > .fa-user-circle{
-    float: left;
-    font-size: 30px;
-    margin: 10px 0 0 10px;
-}
-.aside-userInfo-details-title{
-    display: block;
-    margin: 2px 0 0 45px;
-    font-size: 16px;
-}
-.aside-userInfo-details-type{
-    display: inline-block;
-    margin-left: 6px;
-    font-size: 13px;
-}
-.aside-userInfo-details-mypage{
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    float: left;
-    margin-left: 15px;
-    cursor: pointer;
-}
-.aside-userInfo-details-mypage:hover,
-.aside-userInfo-details-mypage:active{
-    font-weight: bold;
-}
-
-.aside-userInfo-details-logout{
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    float: right;
-    margin-right: 15px;
-    cursor: pointer;
-}
-.aside-userInfo-details-logout:hover,
-.aside-userInfo-details-logout:active{
-    font-weight: bold;
-}
-
-#aside-search {
-    width: 100%;
-    /*height: 60px;*/
-    height: 6%;
-    line-height: 2.6;
-    border: 1px solid #000;
-    /*line-height: 60px;*/
-    text-align: center;
-    font-size: 20px;
-}
-
-#aside-search > .search {
-    width: 70%;
-    height: 30px;
-    line-height: 30px;
-    border: 1px solid #999;
-}
-
-#aside-search > .fas {
-    /*margin-top: 10px;*/
-    margin-left: 5px;
-    cursor: pointer;
-}
-
-#aside-search > .fas:hover,
-#aside-search > .fas:active {
-    transition: all 0.5s;
-    transform: scale(1.1);
-}
-
-#aside-nav {
-    width: 100%;
-    /*height: 700px;*/
-    height: 76%;
-    border: 1px solid #000;
-    overflow: auto;
-}
-
-.aside-nav-title {
-    margin: 15px 0 5px 15px;
-    cursor: pointer;
-}
-
-.aside-nav-title .fas {
-    margin-left: 5px;
-    cursor: pointer;
-}
-.aside-nav-title > .fas.show{
-
-}
-.aside-nav-title > .fas.hide{
-    transform: rotate(180deg);
-}
-.aside-nav-ul{
-
-}
-.aside-nav-ul.show{
-    display: block;
-    transition: all 1s;
-}
-.aside-nav-ul.hide{
-    display: none;
-    height: 0;
-    transition: all 1s;
-}
-
-.aside-nav-ul > li {
-    margin-left: 30px;
-    font-size: 16px;
-}
-
-#aside-setting {
-    width: 100%;
-    height: 6%;
-    line-height: 2.6;
-    /*height: 50px;*/
-    /*line-height: 50px;*/
-    border: 1px solid #000;
-    font-size: 18px;
-    text-align: center;
-    cursor: pointer;
+.sidebar.hide {
+    left: -230px;
 }
 
 .fa-angle-double-left {
+    color: var(--main-color);
     position: fixed;
-    z-index: 10;
-    top: 80px;
-    font-size: 30px;
+    z-index: 1;
+    top: 48%;
+    font-size: x-large;
     animation: flicker 2s ease-in-out infinite;
     cursor: pointer;
     transition: all 1s;
 }
-.fa-angle-double-left.show{
-    left: 13%;
+
+.fa-angle-double-left.show {
+    left: 250px;
 }
+
 .fa-angle-double-left.hide {
-    left: 1%;
+    left: 20px;
     transform: rotate(180deg);
 }
 
 @keyframes flicker {
     0% {
-        opacity: 1;
+        opacity: 0.7;
     }
     50% {
-        opacity: 0.5;
+        opacity: 0.2;
     }
     100% {
-        opacity: 1;
+        opacity: 0.7;
     }
 }
 
-/* 로그인 login */
-#login {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
+.sidebar-nav {
     width: 100%;
-    height: 100%;
-    /*background: #000000;*/
-    background: rgba(0, 0, 0, 0.9);
-    /*opacity: 0.8;*/
+    font-size: larger;
 }
 
-#login.hide {
+.sidebar-nav-item-title {
+    cursor: pointer;
+    margin: 20px 0 0 0;
+}
+
+.sidebar-nav-item-title .fas {
+    margin-left: 5px;
+}
+
+.sidebar-nav-item-title .fas.hide {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav-items {
+    transition: all 3s;
+}
+
+.sidebar-nav-items.hide {
     display: none;
 }
 
-#login.show {
-    display: block;
-}
-
-
-#login-area {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    width: 500px;
-    height: 500px;
-    background: #ffffff;
-    opacity: 1;
-}
-
-#login-area-title {
+.setting {
+    width: 240px;
+    position: fixed;
+    bottom: 0;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: large;
     text-align: center;
-    /*margin: 10%;*/
-    padding: 10% 0 3% 0;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.login-area-button {
-    display: block;
-    margin: 45px auto;
-    width: 250px;
-    height: 40px;
-    border: 1px solid #000;
-    /*margin-top: 30px;*/
-    cursor: pointer;
-    background: #eee;
-}
-
-.login-area-button:hover,
-.login-area-button:active {
-    font-weight: bold;
-}
-
-.login-area-googleButton:hover,
-.login-area-googleButton:active {
-    background: rgb(204, 55, 49);
-}
-
-.login-area-naverButton:hover,
-.login-area-naverButton:active {
-    background: rgb(29, 200, 0);
-}
-
-.login-area-kakaoButton:hover,
-.login-area-kakaoButton:active {
-    background: rgb(255, 235, 0);
-}
-
-.login-area-closeButton {
-    position: absolute;
-    top: 0;
-    right: 5px;
-    font-size: 40px;
-    cursor: pointer;
-    opacity: 0.7;
-}
-
-.login-area-closeButton:hover,
-.login-area-closeButton:active {
-    opacity: 1;
 }
