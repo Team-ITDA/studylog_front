@@ -43,105 +43,124 @@
 
 
 /* 정보 영역 */
-#myInfo{
+.myInfo{
+    position: relative;
     border: 1px solid #000;
     padding: 20px 0;
     box-sizing: border-box;
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
+    min-height: 730px;
 }
-#myInfo-title{
+.myInfo-title{
     font-size: 26px;
     font-weight: bold;
     margin: 15px 0;
-    text-indent: 10%;
+    text-indent: 50px;
 }
 .myInfo-bar{
     display: block;
     border: 1px solid #aaaaaa;
-    margin: 25px auto;
-    width: 85%;
-}
-
-.myInfo-container{
-    display: block;
-    width: 80%;
-    margin: 15px auto;
+    margin: 25px 50px;
+    width: 45%;
 }
 .myInfo-container-titles{
     font-size: 20px;
     margin-bottom: 15px;
+    display: none;
+}
+.myInfo-photo{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
 }
 .myInfo-photo-image{
-    width: 150px;
-    height: 150px;
-    margin-bottom: 15px;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
 }
 .myInfo-photo-uploadButton{
+    width: 120px;
+    height: 40px;
     font-size: 20px;
     border: 1px solid #000;
     border-radius: 5px;
     cursor: pointer;
-    margin: 15px 0 0 0;
+    margin: 0 50%;
+    transform: translateX(-50%);
 }
 .myInfo-photo-uploadButton:hover,
 .myInfo-photo-uploadButton:active{
     background: skyblue;
     color: #ffffff;
 }
+.myInfo-photo:after{
+    clear: both;
+    display: block;
+    content: none;
+}
+.myInfo-information{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin: 50px 0;
+}
 .myInfo-information-labels{
     display: block;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
     text-indent: 10px;
 }
-#myInfo-information-email{
+.myInfo-information-email{
     display: block;
-    height: 36px;
     font-size: 20px;
     margin: 0 0 10px 10px;
     text-indent: 10px;
     box-sizing: border-box;
+    border: none !important;
 }
-#myInfo-information-firstName,
-#myInfo-information-lastName{
+.myInfo-information-texts{
     display: block;
-    border: 1px solid #000;
-    width: 100%;
-    height: 36px;
-    font-size: 20px;
-    margin: 0 0 10px 10px;
+    width: 70%;
+    font-size: 23px;
+    margin: 0 0 20px 10px;
     text-indent: 10px;
     box-sizing: border-box;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
 }
-#myInfo-logout-button{
+.myInfo-information:after{
+    clear: both;
+    display: block;
+    content: none;
+}
+
+.myInfo-buttons{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+.myInfo-buttons-update,
+.myInfo-buttons-reset{
+    width: 120px;
+    height: 40px;
     font-size: 20px;
     border: 1px solid #000;
     border-radius: 5px;
     cursor: pointer;
-    /*margin-left: 10px;*/
+    margin-left: 50px;
 
 }
-#myInfo-logout-button:hover,
-#myInfo-logout-button:active{
-    background: red;
-    color: #ffffff;
-}
-#myInfo-buttons-update,
-#myInfo-buttons-reset{
-    font-size: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 50px;
-}
-#myInfo-buttons-update:hover,
-#myInfo-buttons-update:active{
+.myInfo-buttons-update:hover,
+.myInfo-buttons-update:active{
     background: skyblue;
     color: #ffffff;
 }
 
-#myInfo-buttons-reset:hover,
-#myInfo-buttons-reset:active{
+.myInfo-buttons-reset:hover,
+.myInfo-buttons-reset:active{
     background: #999999;
 }
