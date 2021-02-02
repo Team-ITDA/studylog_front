@@ -76,33 +76,26 @@
 
     <div id="main" class="reduce">
         <div id="main-visual">
-            <form id="myInfo">
-                <h2 id="myInfo-title">계정</h2>
+            <form id="myInfo" class="myInfo">
+                <h2 id="myInfo-title" class="myInfo-title">내 정보 관리</h2>
                 <span class="myInfo-bar"></span>
                 <div class="myInfo-photo myInfo-container">
                     <h3 class="myInfo-photo-title myInfo-container-titles">사진</h3>
                     <img src="#" alt="myInfo-photo-myPhoto" class="myInfo-photo-image" onerror="this.src = 'img/user_default_img.png'"/>
                     <button class="myInfo-photo-uploadButton">사진 업로드</button>
                 </div>
-                <span class="myInfo-bar"></span>
                 <div class="myInfo-information myInfo-container">
                     <h3 class="myInfo-information-title myInfo-container-titles">개인 정보</h3>
                     <label for="myInfo-information-email" class="myInfo-information-labels">이메일</label>
-                    <input type="text" value="yangjinmin95@gmail.com" id="myInfo-information-email" readonly/>
-                    <label for="myInfo-information-firstName" class="myInfo-information-labels">이름</label>
-                    <input type="text" value="진민" id="myInfo-information-firstName"/>
-                    <label for="myInfo-information-lastName" class="myInfo-information-labels">성</label>
-                    <input type="text" value="양" id="myInfo-information-lastName"/>
+                    <input type="text" value="yangjinmin95@gmail.com" id="myInfo-information-email" class="myInfo-information-texts myInfo-information-email" readonly/>
+                    <label for="myInfo-information-name" class="myInfo-information-labels">이름</label>
+                    <input type="text" value="양진민" id="myInfo-information-name" class="myInfo-information-texts myInfo-information-name"/>
+                    <label for="myInfo-information-nickname" class="myInfo-information-labels">닉네임</label>
+                    <input type="text" value="zlnmln" id="myInfo-information-nickname" class="myInfo-information-texts myInfo-information-nickname"/>
                 </div>
-                <span class="myInfo-bar"></span>
-                <div class="myInfo-logout myInfo-container">
-                    <h3 class="myInfo-logout-title myInfo-container-titles">모든 기기에서 로그아웃</h3>
-                    <button id="myInfo-logout-button">로그아웃</button>
-                </div>
-                <span class="myInfo-bar"></span>
                 <div class="myInfo-buttons myInfo-container">
-                    <button id="myInfo-buttons-update">업데이트</button>
-                    <button id="myInfo-buttons-reset" type="reset">취소</button>
+                    <button id="myInfo-buttons-update" class="myInfo-buttons-update">수정</button>
+                    <button id="myInfo-buttons-reset" class="myInfo-buttons-reset" type="reset">취소</button>
                 </div>
             </form>
         </div>
