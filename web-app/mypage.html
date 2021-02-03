@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>studylog</title>
+
+    <link rel="stylesheet" href="css/myPage.css">
+
+    <script src="js/global.js" defer></script>
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<iframe class="frame-header" src="global/header.html" frameborder="0" scrolling="no"></iframe>
+<iframe class="frame-header-user-info hide" src="global/header_user_info.html"></iframe>
+<iframe class="frame-login hide" src="global/login.html"></iframe>
+<iframe class="frame-sidebar show" src="global/sidebar.html" frameborder="0" scrolling="no"></iframe>
+
+<div class="main-container reduce">
+    <form id="myInfo" class="myInfo">
+        <h2 id="myInfo-title" class="myInfo-title">내 정보 관리</h2>
+        <span class="myInfo-bar"></span>
+        <div class="myInfo-photo myInfo-container">
+            <h3 class="myInfo-photo-title myInfo-container-titles">사진</h3>
+            <img src="#" alt="myInfo-photo-myPhoto" class="myInfo-photo-image"
+                 onerror="this.src = 'img/user_default_img.png'"/>
+            <button class="myInfo-photo-uploadButton">사진 업로드</button>
+        </div>
+        <div class="myInfo-information myInfo-container">
+            <h3 class="myInfo-information-title myInfo-container-titles">개인 정보</h3>
+            <label for="myInfo-information-email" class="myInfo-information-labels">이메일</label>
+            <input type="text" value="yangjinmin95@gmail.com" id="myInfo-information-email"
+                   class="myInfo-information-texts myInfo-information-email" readonly/>
+            <label for="myInfo-information-name" class="myInfo-information-labels">이름</label>
+            <input type="text" value="양진민" id="myInfo-information-name"
+                   class="myInfo-information-texts myInfo-information-name"/>
+            <label for="myInfo-information-nickname" class="myInfo-information-labels">닉네임</label>
+            <input type="text" value="zlnmln" id="myInfo-information-nickname"
+                   class="myInfo-information-texts myInfo-information-nickname"/>
+        </div>
+        <div class="myInfo-buttons myInfo-container">
+            <button id="myInfo-buttons-update" class="myInfo-buttons-update">수정</button>
+            <button id="myInfo-buttons-reset" class="myInfo-buttons-reset" type="reset">취소</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
