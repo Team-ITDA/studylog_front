@@ -1,0 +1,93 @@
+@import url(reset.css);
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background: whitesmoke;
+}
+
+.login-img-article {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.login-article {
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.login-img {
+    height: 100%;
+}
+
+.login-title {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #2F4F4F;
+    margin-top: 80px;
+}
+
+.login-button {
+    display: block;
+    margin: 40px auto;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 var(--main-color);
+}
+
+.login-button-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+}
+
+.login-button-text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.google-login-button {
+    background: white;
+}
+
+.google-login-icon {
+    background: transparent url('../img/login/google_login_button_icon.svg') 5px 50% no-repeat;
+}
+
+.naver-login-button {
+    background: #1EC800;
+}
+
+.naver-login-text {
+    color: white;
+}
+
+.kakao-login-button {
+    background: #FEE500;
+}
+
+.login-area-closeButton {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: xx-large;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.login-area-closeButton:hover,
+.login-area-closeButton:active {
+    opacity: 1;
+}

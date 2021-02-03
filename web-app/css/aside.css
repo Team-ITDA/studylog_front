@@ -1,41 +1,29 @@
 @import url(reset.css);
 
 .sidebar {
-    position: fixed;
-    z-index: 1;
     padding-top: 60px;
-    width: 240px;
-    height: 100%;
-    transition: all 1s;
     box-shadow: 0 1px 3px 1px var(--main-color);
     text-align: center;
-}
-
-.sidebar.show {
-    left: 0;
-}
-
-.sidebar.hide {
-    left: -230px;
+    height: 100vh;
+    width: 240px;
 }
 
 .fa-angle-double-left {
     color: var(--main-color);
     position: fixed;
     z-index: 1;
-    top: 48%;
+    top: 48vh;
     font-size: x-large;
     animation: flicker 2s ease-in-out infinite;
     cursor: pointer;
     transition: all 1s;
-}
-
-.fa-angle-double-left.show {
     left: 250px;
 }
 
+.fa-angle-double-left.show {
+}
+
 .fa-angle-double-left.hide {
-    left: 20px;
     transform: rotate(180deg);
 }
 
@@ -80,7 +68,7 @@
 .setting {
     width: 240px;
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     cursor: pointer;
     margin-bottom: 10px;
     font-size: large;
