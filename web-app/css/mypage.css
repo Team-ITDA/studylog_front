@@ -1,46 +1,5 @@
 @charset "utf-8";
 @import url(reset.css);
-@import url(header.css);
-@import url(aside.css);
-
-
-#wrap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 1903px;
-}
-
-/* main 부분 */
-#main {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 70px 100px;
-    margin-top: 60px;
-    transition: all 1s;
-    overflow: auto;
-}
-
-#main.reduce {
-    width: 88%;
-    left: 12%;
-}
-
-#main.increase {
-    width: 100%;
-    left: 0%;
-    padding: 70px 150px;
-}
-
-#main-visual {
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-}
-
 
 /* 정보 영역 */
 #myInfo{
@@ -48,7 +7,7 @@
     padding: 20px 0;
     box-sizing: border-box;
     width: 70%;
-    margin: 0 auto;
+    margin: 40px auto 0;
 }
 #myInfo-title{
     font-size: 26px;
