@@ -8,6 +8,7 @@
 
 .header-title {
     display: inline-block;
+    width: 172px;
     margin-left: 50px;
     font-weight: bold;
 }
