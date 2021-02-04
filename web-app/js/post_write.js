@@ -37,10 +37,8 @@ class Viewer {
         this.#title.innerText = title;
     }
 
-    setCategories(categories) {
-        for (const category of categories) {
-            this.#categories.innerText += Category.HASH + category.getContent() + " ";
-        }
+    addCategory(category) {
+        this.#categories.innerText += Category.HASH + category + " ";
     }
 
     show() {
@@ -69,8 +67,10 @@ class CategoryFactory {
         if (event.key !== "Enter") {
             return;
         }
+        viewer.addCategory(this.#input.value);
+
         const category = new Category(this.#input.value);
-        this.#items.push(category)
+        this.#items.push(category);
         this.#container.insertBefore(category.getHtmlNode(), this.#input);
         this.#input.value = "";
     }
@@ -110,7 +110,6 @@ function submitPost() {
     }
 
     viewer.setTitle(document.querySelector(".editor-title").value);
-    viewer.setCategories(categories.getCategories());
     viewer.setContent(editor.getContent());
     viewer.show();
 }
