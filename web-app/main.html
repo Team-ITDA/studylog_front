@@ -6,113 +6,14 @@
 
     <link rel="stylesheet" href="css/main.css">
 
-    <script src="js/header.js" defer></script>
-    <script src="js/aside.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/global.js" defer></script>
     <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<header class="header">
-    <h1 class="header-title">
-        <a href="main.html">StudyLog</a>
-    </h1>
-
-    <a class="header-user-info hide">
-        <i class="fas fa-angle-down"></i>
-        <i class="fas fa-angle-up hide"></i>
-        dudrhs571@gmail.com
-    </a>
-
-    <a class="header-login-button">
-        <i class="fas fa-user-circle header-login-button-icon"></i>
-        <div class="header-login-text">로그인 해주세요</div>
-    </a>
-
-    <ul class="header-nav">
-        <li class="header-nav-item"><a href="#">DASHBOARD</a></li>
-        <li class="header-nav-item"><a href="#">REVIEW</a></li>
-        <li class="header-nav-item"><a href="#">POST</a></li>
-    </ul>
-
-    <div class="header-search focusout">
-        <button class="header-search-icon">
-            <i class="fas fa-search"></i>
-        </button>
-        <input class="header-search-input" type="text" placeholder="검색"/>
-    </div>
-</header>
-
-<div class="user-container hide">
-    <ul class="aside-userInfo-details-blogs">
-        <li>
-            <i class="fas fa-user-circle"></i>
-            <strong class="aside-userInfo-details-title">진민의 Notion</strong>
-            <span class="aside-userInfo-details-type">개인 블로그</span>
-        </li>
-        <li>
-            <i class="fas fa-user-circle"></i>
-            <strong class="aside-userInfo-details-title">STUDYLOG</strong>
-            <span class="aside-userInfo-details-type">팀 블로그</span>-
-            <span class="aside-userInfo-details-typeCount">5</span>명
-        </li>
-    </ul>
-    <span class="aside-userInfo-details-mypage">내 정보 관리</span>
-    <span class="logout">로그아웃</span>
-</div>
-
-<aside class="sidebar show">
-    <i class="sidebar-control-button fas fa-angle-double-left show"></i>
-
-    <nav class="sidebar-nav">
-        <h2 class="sidebar-nav-item-title">카테고리<i class="fas fa-caret-down"></i></h2>
-        <ul class="sidebar-nav-items hide">
-            <li><a href="#">전체보기</a></li>
-            <li><a href="#">알고리즘</a></li>
-            <li><a href="#">자바스크립트</a></li>
-            <li><a href="#">자바</a></li>
-            <li><a href="#">기타</a></li>
-        </ul>
-
-        <h2 class="sidebar-nav-item-title">태그<i class="fas fa-caret-down"></i></h2>
-        <ul class="sidebar-nav-items hide">
-            <li><a href="#">#</a></li>
-        </ul>
-    </nav>
-
-    <div class="setting">
-        <i class="fas fa-cog"></i>
-        <span>블로그 설정</span>
-    </div>
-</aside>
-
-<div class="login-container hide">
-    <section class="login-box">
-        <article class="login-img-article">
-            <img class="login-img" src="img/login/login_container_img.png"/>
-        </article>
-
-        <article class="login-article">
-            <h1 class="login-title">로그인</h1>
-
-            <div class="login-button google-login-button">
-                <span class="google-login-icon login-button-icon"></span>
-                <span class="login-button-text">구글로 시작하기</span>
-            </div>
-
-            <div class="login-button naver-login-button">
-                <img class="login-button-icon" src="img/login/naver_login_button_icon.png"/>
-                <span class="naver-login-text login-button-text">네이버로 시작하기</span>
-            </div>
-
-            <div class="login-button kakao-login-button">
-                <img class="login-button-icon" src="img/login/kakao_login_button_icon.png"/>
-                <span class="login-button-text">카카오로 시작하기</span>
-            </div>
-        </article>
-
-        <i class="fas fa-times login-area-closeButton"></i>
-    </section>
-</div>
+<iframe class="frame-header" src="global/header.html" frameborder="0" scrolling="no"></iframe>
+<iframe class="frame-header-user-info hide" src="global/header_user_info.html"></iframe>
+<iframe class="frame-login hide" src="global/login.html"></iframe>
+<iframe class="frame-sidebar show" src="global/sidebar.html" frameborder="0" scrolling="no"></iframe>
 
 <div class="main-container reduce">
     <section class="main-section">
