@@ -1,96 +1,131 @@
 @charset "utf-8";
 @import url(reset.css);
-@import url(header.css);
-@import url(aside.css);
 
+.editor-container {
+    margin: 50px 0 50px 5%;
+    width: 90%;
+}
 
-#wrap {
-    position: relative;
+.editor-category {
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.editor-category-input {
+    font-size: large;
+    vertical-align: top;
+}
+
+.editor-category-input::placeholder {
+    font-size: large;
+}
+
+.editor-category-item {
+    color: var(--main-color);
+    margin-right: 10px
+}
+
+.editor-title {
     width: 100%;
-    height: 100%;
-    max-width: 1903px;
-}
-
-/* main 부분 */
-#main {
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 70px 100px;
-    margin-top: 60px;
-    transition: all 1s;
-    overflow: auto;
-}
-
-#main.reduce {
-    width: 88%;
-    left: 12%;
-}
-
-#main.increase {
-    width: 100%;
-    left: 0%;
-    padding: 70px 150px;
-}
-
-#main-visual {
-    position: relative;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-}
-
-.editor{
-    /*height: auto !important;*/
-    /*border: 1px solid #000;*/
-}
-.editor-category{
-    display: block;
-    box-sizing: border-box;
-    padding: 5px;
-    /*font-size: 14px;*/
-}
-.editor-title{
     height: auto;
     margin: 10px 0;
     font-size: 30px;
 }
-.editor-title::placeholder{
+
+.editor-title::placeholder {
     font-size: 30px;
 }
-.editor-buttons{
+
+.editor-buttons {
     text-align: center;
 }
-.CodeMirror-sizer{
-    /*border-right: none !important;*/
-    /*padding-right: 30px !important;*/
+
+.save-button {
+    float: right;
 }
-.CodeMirror-scroll{
-    /*overflow: visible !important;*/
-}
-.CodeMirror-vscrollbar{
-    /*display: none !important;*/
-}
-button.editor-buttons-save,
-button.editor-buttons-reset{
-    margin-top: 50px;
+
+.save-button {
+    margin-top: 30px;
     box-sizing: border-box;
     padding: 10px 35px;
-    border: 1px solid #999999;
-    font-size: 18px;
+    border: 1px solid gray;
+    font-size: larger;
     cursor: pointer;
 }
-button.editor-buttons-save{
-    margin-right: 30px;
-}
-button.editor-buttons-save:hover,
-button.editor-buttons-save:active{
+
+.save-button:hover,
+.save-button:active,
+.submit-button:hover,
+.submit-button:active {
     background: skyblue;
     color: #ffffff;
 }
-button.editor-buttons-reset:hover,
-button.editor-buttons-reset:active{
-    background: #cccccc;
-    color: #ffffff;
+
+.viewer-container {
+    background: rgba(0, 0, 0, 0.7);
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 0.5s; /* Opera */
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+
+.viewer-container.hide {
+    display: none;
+}
+
+.viewer {
+    padding: 1%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 80%;
+    background: whitesmoke;
+    overflow-y: scroll;
+}
+
+.viewer-title {
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+
+.viewer-category {
+    font-size: x-large;
+    color: var(--main-color);
+}
+
+#viewer {
+    margin-top: 20px;
+}
+
+.viewer-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.submit-button, .cancel-button {
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px 35px;
+    margin-right: 20px;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.cancel-button:hover,
+.cancel-button:active {
+    color: white;
+    background-color: red;
+}
+
+.CodeMirror-vscrollbar {
+    z-index: 1;
 }
