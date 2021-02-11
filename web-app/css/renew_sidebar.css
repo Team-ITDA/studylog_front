@@ -1,0 +1,94 @@
+@import url(color.css);
+@import url(renew_reset.css);
+
+.sidebar {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    width: 15vw;
+    height: 100%;
+    background-color: var(--dark-blue);
+    color: var(--gray-white);
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.item {
+    width: 100%;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.item-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.item-icon-wrapper {
+    grid-column: 1;
+}
+
+.item-text-wrapper {
+    grid-column: 2;
+}
+
+.item-icon {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: x-large;
+}
+
+.item-content {
+    position: relative;
+    padding-left: 1vw;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: larger;
+}
+
+.logo-wrapper {
+    grid-column: 1/3;
+    height: 100%;
+}
+
+.logo {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 3vw;
+}
+
+.logo-bg-color {
+    background-color: rgba(var(--light-blue-black-rgb), 0.7);
+}
+
+.close {
+    position: absolute;
+    font-size: xx-large;
+    right: 10px;
+    top: 5px;
+}
+
+.odd-number-item-color-light {
+    background-color: var(--dark-sky);
+}
+
+.odd-number-item-color {
+    background-color: rgba(var(--dark-sky-rgb), 0.9);
+}
+
+.even-number-item-color-light {
+    background-color: var(--deep-dark-sky);
+}
+
+.even-number-item-color {
+    background-color: rgba(var(--deep-dark-sky-rgb), 0.9);
+}
