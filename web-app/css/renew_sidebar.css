@@ -70,13 +70,6 @@
     background-color: rgba(var(--light-blue-black-rgb), 0.7);
 }
 
-.close {
-    position: absolute;
-    font-size: xx-large;
-    right: 10px;
-    top: 5px;
-}
-
 .odd-number-item-color-light {
     background-color: var(--dark-sky);
 }
