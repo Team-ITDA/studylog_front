@@ -1,0 +1,22 @@
+:root {
+    --blue-black: #171f25; /*header*/
+    --medium-blue-black: #25292e; /*body background*/
+    --light-blue-black: #2c373d; /*header box*/
+    --blue-sky: #28b2e6; /*header icon*/
+    --sky: #39baea; /*icon background*/
+    --light-sky: #a9c6e6; /*body component emphasis font*/
+    --blue-gray-white: #acb9c9; /*body font*/
+    --blue-gray: #9caec7; /*body title*/
+    --light-blue-gray: #a3b2c4;
+    --gray: #9399a0; /*body component font*/
+    --gray-white: #e9eef5; /*body*/
+    --white: white;
+    --leaf: #7ac9b2; /*button emphasis*/
+    --warning: #d70044; /*alarm emphasis*/
+
+    /* combination color with white */
+    --deep-dark-sky: #7e91b0;
+    --medium-dark-sky: #8a9cba;
+    --dark-sky: #97a9c6;
+    --light-dark-sky: #a8b9d3;
+}
