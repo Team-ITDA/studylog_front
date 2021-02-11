@@ -1,79 +1,60 @@
 :root {
     --blue-black: #171f25; /*header*/
-    --blue-black-rgb: rgb(23, 31, 37);
-    --blue-black-rgba: rgba(23, 31, 37, 1);
+    --blue-black-rgb: 23, 31, 37;
 
     --medium-blue-black: #25292e; /*body background*/
-    --medium-blue-black-rgb: rgb(37, 41, 46);
-    --medium-blue-black-rgba: rgba(37, 41, 46, 1);
+    --medium-blue-black-rgb: 37, 41, 46;
 
     --light-blue-black: #2c373d; /*header box*/
-    --light-blue-black-rgb: rgb(44, 55, 61);
-    --light-blue-black-rgba: rgba(44, 55, 61, 1);
+    --light-blue-black-rgb: 44, 55, 61;
 
     --dark-blue: #394b61;
-    --dark-blue-black-rgb: rgb(57, 75, 97);
-    --dark-blue-black-rgba: rgba(57, 75, 97, 1);
+    --dark-blue-black-rgb: 57, 75, 97;
 
     --blue-sky: #28b2e6; /*header icon*/
-    --blue-sky-rgb: rgb(40, 178, 230);
-    --blue-sky-rgba: rgba(40, 178, 230, 1);
+    --blue-sky-rgb: 40, 178, 230;
 
     --sky: #39baea; /*icon background*/
-    --sky-rgb: rgb(57, 186, 234);
-    --sky-rgba: rgba(57, 186, 234, 1);
+    --sky-rgb: 57, 186, 234;
 
     --light-sky: #a9c6e6; /*body component emphasis font*/
-    --light-sky-rgb: rgb(169, 198, 230);
-    --light-sky-rgba: rgba(169, 198, 230, 1);
+    --light-sky-rgb: 169, 198, 230;
 
     --blue-gray-white: #acb9c9; /*body font*/
-    --blue-gray-white-rgb: rgb(172, 185, 201);
-    --blue-gray-white-rgba: rgba(172, 185, 201, 1);
+    --blue-gray-white-rgb: 172, 185, 201;
 
     --blue-gray: #9caec7; /*body title*/
-    --blue-gray-rgb: rgb(156, 174, 199);
-    --blue-gray-rgba: rgba(156, 174, 199, 1);
+    --blue-gray-rgb: 156, 174, 199;
 
     --light-blue-gray: #a3b2c4;
-    --light-blue-gray-rgb: rgb(163, 178, 196);
-    --light-blue-gray-rgba: rgba(163, 178, 196, 1);
+    --light-blue-gray-rgb: 163, 178, 196;
 
     --gray: #9399a0; /*body component font*/
-    --gray-rgb: rgb(147, 153, 160);
-    --gray-rgba: rgba(147, 153, 160, 1);
+    --gray-rgb: 147, 153, 160;
 
     --gray-white: #e9eef5; /*body*/
-    --gray-white-rgb: rgb(233, 238, 245);
-    --gray-white-rgba: rgba(233, 238, 245, 1);
+    --gray-white-rgb: 233, 238, 245;
 
     --white: white;
-    --white-rgb: rgb(255, 255, 255);
-    --white-rgba: rgba(255, 255, 255, 1);
+    --white-rgb: 255, 255, 255;
 
     --leaf: #7ac9b2; /*button emphasis*/
-    --leaf-rgb: rgb(122, 201, 178);
-    --leaf-rgba: rgba(122, 201, 178, 1);
+    --leaf-rgb: 122, 201, 178;
 
     --warning: #d70044; /*alarm emphasis*/
-    --warning-rgb: rgb(215, 0, 68);
-    --warning-rgba: rgba(215, 0, 68, 1);
+    --warning-rgb: 215, 0, 68;
 
 
     /* combination color with white */
     --deep-dark-sky: #7e91b0;
-    --deep-dark-sky-rgb: rgb(126, 145, 176);
-    --deep-dark-sky-rgba: rgba(126, 145, 176, 1);
+    --deep-dark-sky-rgb: 126, 145, 176;
 
     --medium-dark-sky: #8a9cba;
-    --medium-dark-sky-rgb: rgb(138, 156, 186);
-    --medium-dark-sky-rgba: rgba(138, 156, 186, 1);
+    --medium-dark-sky-rgb: 138, 156, 186;
 
     --dark-sky: #97a9c6;
-    --dark-sky-rgb: rgb(151, 169, 198);
-    --dark-sky-rgba: rgba(151, 169, 198, 1);
+    --dark-sky-rgb: 151, 169, 198;
 
     --light-dark-sky: #a8b9d3;
-    --light-dark-sky-rgb: rgb(168, 185, 211);
-    --light-dark-sky-rgba: rgba(168, 185, 211, 1);
+    --light-dark-sky-rgb: 168, 185, 211;
 }
