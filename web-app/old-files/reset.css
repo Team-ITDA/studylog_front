@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+    --main-color: #2F4F4F;
+}
+
+/*reset*/
+html, body, div, ul, ol, li, dl, dt, dd, p, address, h1, h2, h3, h4, h5, h6, blockquote, table, tr, th, td, caption, form, fieldset, legend, header, article, nav, section, main, footer, figure, aside {
+    margin: 0;
+    padding: 0;
+}
+
+/*블럭요소만 없어야하므로 아는것 모두 적기*/
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+
+a img {
+    border: 0; /*추가*/
+    outline: 0;
+}
+
+/*익스플로러 9 이하에서 생기는 문제 없애기 위해*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/*대부분경우에 쓰지만 옵션*/
+i, em, address, cite {
+    font-style: normal;
+}
+
+/*기본 이탤릭이라 기본으로 바꾸기 사이트는 출처표기 태그*/
+table {
+    border-collapse: collapse;
+    transition: all 0.5s;
+}
+
+/*셀패딩없애기*/
+form fieldset {
+    border: 0;
+}
+
+/*그룹끼리 묶이도록*/
+caption, figcaption, legend {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+/*display:none은 웹접근성적인 측면에서 안됨 figcaption은 figure에 있는것*/
+/*float 해제*/
+.cf:before, .cf:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+input, button {
+    border: none;
+    background: none;
+    outline: 0;
+    vertical-align: middle;
+    font: 1.4rem 'Noto Sans KR', 'sans-serif';
+}
+
+input[type="submit"], input[type="reset"] {
+    cursor: pointer;
+}
+
+input::placeholder {
+    font: 1.4rem 'Noto Sans KR', 'sans-serif';
+}
+
+select {
+    font: 1.4rem 'Noto Sans KR', 'sans-serif';
+    outline: none;
+}
+
+.hidden {
+    display: block;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font: 1.4rem 'Noto Sans KR', 'sans-serif';
+}
+
+.frame-header {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 var(--main-color);
+}
+
+.frame-login {
+    background: rgba(0, 0, 0, 0.7);
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 0.5s; /* Opera */
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.frame-login.hide, .frame-header-user-info.hide {
+    display: none;
+}
+
+.frame-header-user-info {
+    position: fixed;
+    z-index: 5;
+    right: 0;
+    width: 200px;
+    margin-top: 60px;
+    margin-right: 5px;
+    box-shadow: 2px 2px 3px 2px var(--main-color);
+    background-color: white;
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s; /* Firefox */
+    -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+    -o-animation: fadein 0.5s; /* Opera */
+}
+
+.frame-sidebar {
+    position: fixed;
+    z-index: 1;
+    width: 300px;
+    height: 100vh;
+    transition: all 1s;
+}
+
+.frame-sidebar.show {
+    left: 0;
+}
+
+.frame-sidebar.hide {
+    left: -230px;
+}
+
+.main-container {
+    padding-top: 60px;
+    margin-bottom: 100px;
+    transition: all 1s;
+}
+
+.reduce {
+    padding-left: 240px;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

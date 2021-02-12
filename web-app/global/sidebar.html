@@ -2,33 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/aside.css">
+    <title>StudyLog</title>
+    <link rel="stylesheet" href="../css/sidebar.css">
     <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <aside class="sidebar">
-    <i class="fas fa-angle-double-left show"></i>
-
-    <nav class="sidebar-nav">
-        <h2 class="sidebar-nav-item-title">카테고리<i class="fas fa-caret-down"></i></h2>
-        <ul class="sidebar-nav-items hide">
-            <li><a href="#">전체보기</a></li>
-            <li><a href="#">알고리즘</a></li>
-            <li><a href="#">자바스크립트</a></li>
-            <li><a href="#">자바</a></li>
-            <li><a href="#">기타</a></li>
-        </ul>
-
-        <h2 class="sidebar-nav-item-title">태그<i class="fas fa-caret-down"></i></h2>
-        <ul class="sidebar-nav-items hide">
-            <li><a href="#">#</a></li>
-        </ul>
-    </nav>
-
-    <div class="setting">
-        <i class="fas fa-cog"></i>
-        <span>블로그 설정</span>
-    </div>
+    <ul class="container">
+        <li class="item">
+            <article class="logo-wrapper">
+                <img class="logo" src="../img/logo.png" alt="logo"/>
+            </article>
+        </li>
+        <li class="item">
+            <section class="item-wrapper item-icon-wrapper even-number-item-color-light">
+                <article class="item-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </article>
+            </section>
+            <section class="item-wrapper item-text-wrapper even-number-item-color">
+                <article class="item-content">
+                    ISSUE
+                </article>
+            </section>
+        </li>
+        <li class="item">
+            <section class="item-wrapper item-icon-wrapper odd-number-item-color-light">
+                <article class="item-icon">
+                    <i class="fas fa-copy"></i>
+                </article>
+            </section>
+            <section class="item-wrapper item-text-wrapper odd-number-item-color">
+                <article class="item-content">
+                    REVIEW
+                </article>
+            </section>
+        </li>
+        <li class="item">
+            <section class="item-wrapper item-icon-wrapper even-number-item-color-light">
+                <article class="item-icon">
+                    <i class="fas fa-clipboard"></i>
+                </article>
+            </section>
+            <section class="item-wrapper item-text-wrapper even-number-item-color">
+                <article class="item-content">
+                    POST
+                </article>
+            </section>
+        </li>
+        <li class="item">
+            <section class="item-wrapper item-icon-wrapper odd-number-item-color-light">
+                <article class="item-icon">
+                    <i class="fas fa-wrench"></i>
+                </article>
+            </section>
+            <section class="item-wrapper item-text-wrapper odd-number-item-color">
+                <article class="item-content">
+                    SETTING
+                </article>
+            </section>
+        </li>
+    </ul>
 </aside>
 </body>
 </html>

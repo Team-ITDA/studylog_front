@@ -1,0 +1,144 @@
+@charset "utf-8";
+@import url(reset.css);
+
+.myInfo {
+    position: relative;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 var(--main-color);
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 70%;
+    margin: 40px auto 0;
+    min-height: 730px;
+}
+
+.myInfo-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 15px 0;
+    text-indent: 50px;
+}
+
+.myInfo-bar {
+    display: block;
+    border: 1px solid #aaaaaa;
+    margin: 25px 50px;
+    width: 35%;
+}
+
+.myInfo-container-titles {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.myInfo-photo {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+.myInfo-photo-image {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+}
+
+.myInfo-photo-uploadButton {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, var(--main-color), darkgray) border-box;
+    cursor: pointer;
+    margin: 0 50%;
+    transform: translateX(-50%);
+}
+
+.myInfo-photo-uploadButton:hover,
+.myInfo-photo-uploadButton:active {
+    background: linear-gradient(skyblue, skyblue) padding-box, linear-gradient(to bottom, var(--main-color), darkgray) border-box;
+    color: #ffffff;
+}
+
+.myInfo-photo:after {
+    clear: both;
+    display: block;
+    content: none;
+}
+
+.myInfo-information {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin: 50px 0;
+}
+
+.myInfo-information-labels {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-indent: 10px;
+}
+
+.myInfo-information-email {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px 10px;
+    text-indent: 10px;
+    box-sizing: border-box;
+    border: none !important;
+}
+
+.myInfo-information-texts {
+    display: block;
+    width: 70%;
+    font-size: 23px;
+    margin: 0 0 20px 10px;
+    text-indent: 10px;
+    box-sizing: border-box;
+    border-bottom-style: solid;
+    border-image: linear-gradient(var(--main-color), white) 50;
+    padding: 5px 0;
+}
+
+.myInfo-information:after {
+    clear: both;
+    display: block;
+    content: none;
+}
+
+.myInfo-buttons {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+}
+
+.myInfo-buttons-update,
+.myInfo-buttons-reset {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: linear-gradient(white, white) padding-box, linear-gradient(to bottom, var(--main-color), darkgray) border-box;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.myInfo-buttons-update:hover,
+.myInfo-buttons-update:active {
+    background: linear-gradient(skyblue, skyblue) padding-box, linear-gradient(to bottom, var(--main-color), darkgray) border-box;
+    color: #ffffff;
+}
+
+.myInfo-buttons-reset:hover,
+.myInfo-buttons-reset:active {
+    background: linear-gradient(red, red) padding-box, linear-gradient(to bottom, var(--main-color), darkgray) border-box;
+    color: #ffffff;
+}
