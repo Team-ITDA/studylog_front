@@ -18,10 +18,29 @@
 }
 
 body {
+    width: 100%;
     height: 100%;
     font-family: Handon3gyeopsal300g, sans-serif;
 }
 
 li {
     list-style: none;
+}
+
+iframe {
+    border: none;
+}
+
+.frame-header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+}
+
+.frame-sidebar {
+    position: fixed;
+    left: -15vw;
+    width: 15vw;
+    height: 100%;
 }
