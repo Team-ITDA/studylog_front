@@ -1,5 +1,5 @@
 @import url(color.css);
-@import url(renew_reset.css);
+@import url(reset.css);
 
 .header {
     position: fixed;
