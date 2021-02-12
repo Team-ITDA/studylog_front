@@ -1,10 +1,9 @@
 @charset "utf-8";
-@import url(reset.css);
+@import url(renew_reset.css);
 
 body {
     width: 100%;
     height: 100%;
-    margin: 0;
     overflow: hidden;
 }
 
@@ -92,7 +91,7 @@ body {
     height: 50px;
     cursor: pointer;
     text-align: center;
-    box-shadow: 0 2px 4px 0 var(--main-color);
+    box-shadow: 0 2px 4px 0 #2F4F4F;
     transition: 0.5s;
     border-radius: 25px;
     background: rgba(255, 255, 255, 0.2);

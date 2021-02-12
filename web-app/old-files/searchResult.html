@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>studylog</title>
+
+    <link rel="stylesheet" href="searchResult.css">
+
+    <script src="js/aside.js" defer></script>
+
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="wrap">
+
+    <header id="header">
+        <h1 id="header-title"><a href="main.html">블로그 이름</a></h1>
+        <ul id="header-nav">
+            <li><a href="#">DASHBORAD</a></li>
+            <li><a href="#">POST</a></li>
+            <li><a href="#">REVIEW</a></li>
+        </ul>
+    </header>
+
+    <aside id="aside" class="show">
+        <div id="aside-userInfo">
+            <!--            <img src="#" alt="user-img" />-->
+            <i class="fas fa-user-circle"></i>
+            <span id="aside-userInfo-id">Jinmin</span>
+        </div>
+
+        <div id="aside-userInfo-details" class="hide">
+            <span class="aside-userInfo-details-email">jinmin@gmail.com</span>
+            <ul class="aside-userInfo-details-blogs">
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">진민의 Notion</strong>
+                    <span class="aside-userInfo-details-type">개인 블로그</span>
+                </li>
+                <li>
+                    <i class="fas fa-user-circle"></i>
+                    <strong class="aside-userInfo-details-title">STUDYLOG</strong>
+                    <span class="aside-userInfo-details-type">팀 블로그</span>-
+                    <span class="aside-userInfo-details-typeCount">5</span>명
+                </li>
+            </ul>
+            <span class="aside-userInfo-details-mypage">내 정보 관리</span>
+            <span class="aside-userInfo-details-logout">로그아웃</span>
+        </div>
+
+        <div id="aside-search">
+            <input class="search" type="text" placeholder="검색"/>
+            <i class="fas fa-search"></i>
+        </div>
+        <nav id="aside-nav">
+            <h2 class="aside-nav-title">카테고리<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">전체보기</a></li>
+                <li><a href="#">알고리즘</a></li>
+                <li><a href="#">자바스크립트</a></li>
+                <li><a href="#">자바</a></li>
+                <li><a href="#">기타</a></li>
+            </ul>
+
+            <h2 class="aside-nav-title">태그<i class="fas fa-caret-down"></i></h2>
+            <ul class="aside-nav-ul show">
+                <li><a href="#">#</a></li>
+            </ul>
+        </nav>
+        <div id="aside-setting">
+            <i class="fas fa-cog"></i>
+            <span id="aside-setting-text">블로그 설정</span>
+        </div>
+        <i class="fas fa-angle-double-left show"></i>
+    </aside>
+
+    <div id="main" class="reduce">
+        <div class="main-visual">
+            <div class="searchResult">
+                <h2 class="searchResult-title">&quot;<span class="searchResult-title-searchWord">Web</span>&quot; 검색결과</h2>
+                <span class="searchResult-bar"></span>
+                <ul class="searchResult-lists">
+                    <li class="searchResult-lists-contents">
+                        <h3 class="searchResult-lists-contents-title">HTTP</h3>
+                        <h4 class="searchResult-lists-contents-date">2020.12.13</h4>
+                        <div class="searchResult-lists-contents-text">
+                            브라우저 동작 원리
+                            브라우저의 주요 기능
+                            사용자가 참조 하고자 하는 웹페이지를 서버에 요청(Request)하고 응답(Response)을 받아 브라우저에 표시하는 것이다.
+                            요청한 자원은 보통 HTML 문서이지만 PDF나 이미지(image) 또는 다른 형태일 수 도 있다.
+                            자원의 주소는 URI(Uniform Resource Identifier)에 의해 정해진다.
+                        </div>
+                    </li>
+                    <li class="searchResult-lists-contents">
+                        <h3 class="searchResult-lists-contents-title">REST</h3>
+                        <h4 class="searchResult-lists-contents-date">2020.12.12</h4>
+                        <div class="searchResult-lists-contents-text">
+                            REST 란?
+                            "웹에 존재하는 모든 자원(이미지, 동영상, DB 자원)에 고유한 URI를 부여해 활용"
+                            하는 것으로, 자원을 정의하고 자원에 대한 주소를 지정하는 방법론을 의미한다.
+                            Rest의 정의
+                            REST는 REpresentational State Transfer라는 용어의 약자이다.
+                            자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다. 즉, 자원(resource)의 표현(representation)에 의한 상태 전달이다.
+                        </div>
+                    </li>
+                    <li class="searchResult-lists-contents">
+                        <h3 class="searchResult-lists-contents-title">HTTP</h3>
+                        <h4 class="searchResult-lists-contents-date">2020.12.13</h4>
+                        <div class="searchResult-lists-contents-text">
+                            브라우저 동작 원리
+                            브라우저의 주요 기능
+                            사용자가 참조 하고자 하는 웹페이지를 서버에 요청(Request)하고 응답(Response)을 받아 브라우저에 표시하는 것이다.
+                            요청한 자원은 보통 HTML 문서이지만 PDF나 이미지(image) 또는 다른 형태일 수 도 있다.
+                            자원의 주소는 URI(Uniform Resource Identifier)에 의해 정해진다.
+                        </div>
+                    </li>
+                    <li class="searchResult-lists-contents">
+                        <h3 class="searchResult-lists-contents-title">REST</h3>
+                        <h4 class="searchResult-lists-contents-date">2020.12.12</h4>
+                        <div class="searchResult-lists-contents-text">
+                            REST 란?
+                            "웹에 존재하는 모든 자원(이미지, 동영상, DB 자원)에 고유한 URI를 부여해 활용"
+                            하는 것으로, 자원을 정의하고 자원에 대한 주소를 지정하는 방법론을 의미한다.
+                            Rest의 정의
+                            REST는 REpresentational State Transfer라는 용어의 약자이다.
+                            자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미한다. 즉, 자원(resource)의 표현(representation)에 의한 상태 전달이다.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="login" class="hide">
+        <div id="login-area">
+            <h1 id="login-area-title">로그인</h1>
+            <button class="login-area-button login-area-googleButton">Google로 계속하기</button>
+            <button class="login-area-button login-area-naverButton">Naver로 계속하기</button>
+            <button class="login-area-button login-area-kakaoButton">Kakao로 계속하기</button>
+            <i class="fas fa-times login-area-closeButton"></i>
+        </div>
+    </div>
+</div>
+</body>
+</html>
