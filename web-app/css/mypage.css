@@ -1,1 +1,163 @@
-@import url(reset.css);
+@import "color.css";
+@import "reset.css";
+
+body {
+    background-color: var(--gray-white);
+    margin: 0;
+}
+
+.mypage {
+    position: absolute;
+    width: 60%;
+    height: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 15vh;
+    color: var(--dark-blue);
+}
+
+.profile {
+    height: 20vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 1vw;
+}
+
+.profile-img {
+    grid-column: 1;
+    height: 100%;
+    justify-self: end;
+    border-radius: 5px;
+}
+
+.profile-info {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vw;
+}
+
+.profile-name {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.profile-email {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.profile-nick {
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+.profile-text, .profile-header1, .profile-header2 {
+    width: 100%;
+    padding-left: 1vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-text {
+    width: 100%;
+    height: 60%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: white;
+    font-size: larger;
+}
+
+.profile-header1, .profile-header2 {
+    height: 40%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    color: white;
+}
+
+.profile-header1 {
+    background-color: var(--medium-dark-sky);
+}
+
+.profile-header2 {
+    background-color: var(--light-dark-sky);
+}
+
+.profile-content {
+    margin-left: 5px;
+}
+
+.profile-input {
+    width: 30vw;
+    font-size: large;
+    outline: none;
+}
+
+.profile-edit-button {
+    position: relative;
+    float: right;
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+.fa-user {
+    color: var(--medium-dark-sky)
+}
+
+.fa-google {
+    color: var(--warning);
+}
+
+.fa-user-secret {
+    color: var(--light-dark-sky);
+}
+
+.blog {
+    margin-top: 2vw;
+    display: grid;
+    grid-gap: 1vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(10vh, 10vh);
+}
+
+.blog-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.blog-icon {
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--sky);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xxx-large;
+    color: white;
+}
+
+.blog-name {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-create-button {
+    background-color: var(--sky);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xxx-large;
+    cursor: pointer;
+}
