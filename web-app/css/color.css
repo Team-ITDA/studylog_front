@@ -57,4 +57,16 @@
 
     --light-dark-sky: #a8b9d3;
     --light-dark-sky-rgb: 168, 185, 211;
+
+    /* main page list background color*/
+    --light-pink: #ff6490;
+    --light-pink-rgb: 255, 100, 144;
+    --soft-cyan: #48e298;
+    --soft-cyan-rgb: 72, 226, 152;
+    --very-light-blue: #a28dff;
+    --very-light-blue-rgb: 162, 141, 255;
+    --very-light-orange: #ffc573;
+    --very-light-orange-rgb: 255, 197, 115;
+    --dark-moderate-orenge: #b28950;
+    --dark-moderate-orenge-rgb: 178, 137, 80;
 }
