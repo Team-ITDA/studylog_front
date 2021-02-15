@@ -25,11 +25,13 @@
     justify-self: center;
 }
 
-.buttons {
+.git {
     grid-column: 3;
     justify-self: start;
+    text-decoration: none;
+    color: var(--gray);
 }
 
-.git {
-    cursor: pointer;
+.git:hover {
+    color: var(--blue-sky);
 }
