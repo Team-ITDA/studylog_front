@@ -1,0 +1,229 @@
+@import url(color.css);
+@import url(reset.css);
+
+.blog-setting {
+    position: relative;
+    z-index: 0;
+    /*height: 100%;*/
+    box-sizing: border-box;
+    /*overflow: hidden;*/
+    padding: 10vh 20% 10vh 20%;
+    background-color: var(--gray-white);
+}
+
+.blog-info {
+    /*position: relative;*/
+    /*top: 10%;*/
+    /*left: 10vw;*/
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 2vw;
+    margin: 30px 0;
+}
+
+.blog-setting-title {
+    /*position: relative;*/
+    /*top: 5%;*/
+    margin-top: 50px;
+    font-size: xx-large;
+}
+
+.blog-info-images {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.blog-info-images-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.blog-info-images-edit {
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.blog-info-texts {
+    display: grid;
+    grid-gap: 3vh;
+}
+
+.blog-info-texts-name {
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    text-indent: 2%;
+    font-size: larger;
+}
+
+.blog-info-texts-introduction {
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    text-indent: 2%;
+    font-size: larger;
+}
+
+.blog-info-texts-internet-address {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 65px;
+    box-sizing: border-box;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    text-indent: 2%;
+    font-size: larger;
+}
+
+.member:before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--dark-blue);
+    margin-bottom: 30px;
+}
+
+.member {
+}
+
+.member-title {
+    /*font-size: xx-large;*/
+}
+
+.member-invite {
+    position: relative;
+    width: 100%;
+    height: 65px;
+    margin: 30px 0;
+    background-color: var(--white);
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+
+}
+
+.member-invite-link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 85%;
+    height: 100%;
+    text-indent: 2%;
+    font-size: larger;
+    border-radius: 10px 0 0 10px;
+}
+
+.member-invite-link-copy {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 14.5%;
+    height: 100%;
+    line-height: 4;
+    vertical-align: middle;
+    text-align: center;
+    background-color: var(--blue-sky);
+    color: var(--white);
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.member-invite-link-copy:hover {
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+.member-user-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: larger;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    border-left: none;
+    border-right: none;
+}
+
+.member-user-access-level {
+    text-align: right;
+}
+
+.member-list-item {
+    position: relative;
+    height: 100%;
+    margin: 10px 0;
+}
+
+/*
+.member-list-item:after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--gray);
+}*/
+
+.member-list-item:hover .member-list-item-name,
+.member-list-item:hover .member-list-item-email{
+    font-weight: bold;
+}
+
+
+.member-list-item-image {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.member-list-item-name,
+.member-list-item-email{
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    line-height: 2;
+    font-size: large;
+}
+
+.member-list-item-email {
+    line-height: 1.6;
+}
+
+.member-list-item-access-level {
+    position: absolute;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: large;
+    cursor: pointer;
+}
+
+.member-list-item-access-level-setting{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(60%);
+    border: 1px solid var(--gray);
+    padding: 10px;
+}
+
+.member-list-item-access-level-setting-administrator{
+    margin-right: 20px;
+}
+
+.member-list-item-access-level-setting-administrator:hover,
+.member-list-item-access-level-setting-member:hover{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
