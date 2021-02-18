@@ -1,0 +1,31 @@
+@import url(color.css);
+@import url(reset.css);
+
+body {
+    background-color: var(--gray-white);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    margin-top: 15vh;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+}
+
+.title-icon {
+    font-size: xxx-large;
+    color: var(--blue-gray-white)
+}
+
+.title-header {
+    font-size: 5vw;
+    color: var(--light-blue-black)
+}
+
+.title-footer {
+    color: var(--gray)
+}
