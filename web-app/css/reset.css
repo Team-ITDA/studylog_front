@@ -31,9 +31,10 @@ iframe {
     border: none;
 }
 
-input {
+input, button {
     border: none;
     font-family: Handon3gyeopsal300g, sans-serif;
+    outline: 0;
 }
 
 .frame-header {
