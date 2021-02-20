@@ -2,10 +2,50 @@
 @import url(reset.css);
 
 .main-container {
+    position: relative;
+    left: 0;
     z-index: 0;
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    transition: all 0.5s;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 10;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--blue-black-rgb), 0.5);
+}
+
+.overlay.off {
+    z-index: 0;
+    opacity: 0;
+}
+
+.overlay.on {
+    z-index: 10;
+    opacity: 1;
+}
+
+
+.main-container.sideOn {
+
+}
+
+.main-container.sideOn:before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: black;
+}
+
+.main-container.sideOff {
+    left: 0;
 }
 
 .main-section {
