@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title>studylog</title>
     <link rel="stylesheet" href="css/main.css">
-
+    <script src="js/sidebar-animation.js" defer></script>
     <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<iframe class="frame-header" src="global/header.html"></iframe>
-<iframe class="frame-sidebar" src="global/sidebar.html"></iframe>
+<iframe class="frame-header" src="global/header.html" sandbox="allow-scripts allow-same-origin"></iframe>
+<iframe class="frame-sidebar off" src="global/sidebar.html"></iframe>
+<div class="overlay off"></div>
 
-<div class="main-container">
+<div class="main-container sideOff">
     <section class="main-section members">
         <h2 class="main-section-title">Members</h2>
         <div class="member-container">
@@ -217,5 +218,6 @@
     </section>
 </div>
 <iframe class="frame-footer" src="global/footer.html"></iframe>
+
 </body>
 </html>
