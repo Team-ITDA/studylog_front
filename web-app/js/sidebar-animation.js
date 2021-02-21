@@ -6,14 +6,13 @@ window.onload = function () {
     const overlay = document.querySelector('.overlay');
 
     menuBtn.addEventListener('click', function (event) {
-        sidebarHandler(event);
-        menuBtnClick(event);
-        mainContainerHandler(event);
-        mainContainerOverlayHandler(event);
+        sidebarHandler();
+        menuBtnClick();
+        mainContainerHandler();
+        mainContainerOverlayHandler();
     });
 
-    function sidebarHandler(event) {
-        event.preventDefault();
+    function sidebarHandler() {
         if (sidebarIFrame.classList.contains('off')) {
             sidebarIFrame.classList.add('on');
             sidebarIFrame.classList.remove('off');
@@ -23,8 +22,7 @@ window.onload = function () {
         }
     }
 
-    function menuBtnClick(event) {
-        event.preventDefault();
+    function menuBtnClick() {
         if (menuBtn.classList.contains('sideOff')) {
             menuBtn.classList.add('sideOn');
             menuBtn.classList.remove('sideOff');
@@ -34,8 +32,7 @@ window.onload = function () {
         }
     }
 
-    function mainContainerHandler(event) {
-        event.preventDefault();
+    function mainContainerHandler() {
         if (mainContainer.classList.contains('sideOff')) {
             mainContainer.classList.add('sideOn');
             mainContainer.classList.remove('sideOff');
@@ -45,8 +42,7 @@ window.onload = function () {
         }
     }
 
-    function mainContainerOverlayHandler(event) {
-        event.preventDefault();
+    function mainContainerOverlayHandler() {
         if (overlay.classList.contains('off')) {
             overlay.classList.add('on');
             overlay.classList.remove('off');
