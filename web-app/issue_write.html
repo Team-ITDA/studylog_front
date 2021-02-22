@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudyLog</title>
+    <link rel="stylesheet" href="css/issue_write.css">
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<iframe class="frame-header" src="global/header.html"></iframe>
+<iframe class="frame-sidebar" src="global/sidebar.html"></iframe>
+<div class="main-container">
+    <form>
+        <section class="issue-header">
+            <label><input class="issue-title" type="text" placeholder="제목을 입력하세요"></label>
+            <div class="issue-tag">
+                <div class="issue-category notice">notice</div>
+                <div class="issue-category request">request</div>
+                <div class="issue-category question">question</div>
+                <div class="issue-category chat">chat</div>
+            </div>
+        </section>
+        <section class="list">
+            <article class="issue-content">
+                <img class="writer-img" src="img/user-default/2.png" alt="user img"/>
+                <div class="small-triangle"></div>
+                <div class="content">
+                    <div class="comment-input" contenteditable=true data-placeholder="input here!"></div>
+                </div>
+            </article>
+            <div class="save-button">
+                <div class="comment-save-button">save <i class="fas fa-pen"></i></div>
+            </div>
+        </section>
+    </form>
+</div>
+<iframe class="frame-footer" src="global/footer.html"></iframe>
+</body>
+</html>
