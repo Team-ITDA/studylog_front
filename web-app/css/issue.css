@@ -126,6 +126,12 @@ body {
     box-sizing: border-box;
 }
 
+.comment-input[contentEditable=true]:empty:not(:focus):before {
+    content: attr(data-placeholder);
+    font-size: large;
+    color: var(--gray);
+}
+
 .comment-save-button {
     margin-top: 1vh;
     float: right;
