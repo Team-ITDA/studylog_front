@@ -18,6 +18,37 @@
     left: 2%;
     transform: translateY(-50%);
     cursor: pointer;
+    transition: all 0.5s;
+}
+
+.header-menu.sideOn {
+    left: 16%;
+}
+
+.header-menu.sideOn:hover{
+    transform: scale(1.2) translateY(-50%);
+}
+
+.header-menu.sideOn .header-menu-bar:nth-child(2){
+    opacity: 0;
+}
+
+.header-menu.sideOn .header-menu-bar:nth-child(1){
+    -webkit-transform: translateY(12px) rotate(45deg);
+    -ms-transform: translateY(12px) rotate(45deg);
+    -o-transform: translateY(12px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+
+.header-menu.sideOn .header-menu-bar:nth-child(3){
+    -webkit-transform: translateY(-12px) rotate(-45deg);
+    -ms-transform: translateY(-12px) rotate(-45deg);
+    -o-transform: translateY(-12px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.header-menu.sideOn .header-menu-text {
+    display: none;
 }
 
 .header-menu-bars {
@@ -27,7 +58,6 @@
 
 .header-menu-bar {
     display: block;
-    /*float: left;*/
     width: 30px;
     height: 3px;
     background-color: var(--white);
@@ -41,24 +71,24 @@
     margin-bottom: 0;
 }
 
-.header-menu:hover {
-    animation: menu-hover;
+.header-menu.sideOff:hover {
+    animation: menu-hover 1s infinite ease-in-out;
 }
 
 /* menu hover function */
-.header-menu:hover .header-menu-bar:nth-child(1),
-.header-menu:hover .header-menu-bar:nth-child(3) {
+.header-menu.sideOff:hover .header-menu-bar:nth-child(1),
+.header-menu.sideOff:hover .header-menu-bar:nth-child(3) {
     width: 20px;
 }
 
-.header-menu:hover .header-menu-bar:nth-child(1) {
+.header-menu.sideOff:hover .header-menu-bar:nth-child(1) {
     -webkit-transform: translateX(10px) rotate(45deg);
     -ms-transform: translateX(10px) rotate(45deg);
     -o-transform: translateX(10px) rotate(45deg);
     transform: translateX(12px) rotate(45deg);
 }
 
-.header-menu:hover .header-menu-bar:nth-child(3) {
+.header-menu.sideOff:hover .header-menu-bar:nth-child(3) {
     -webkit-transform: translateX(10px) rotate(-45deg);
     -ms-transform: translateX(10px) rotate(-45deg);
     -o-transform: translateX(10px) rotate(-45deg);
