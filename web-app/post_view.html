@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Studylog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+    <link rel="stylesheet" href="css/post_view.css">
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+    <script src="js/post_view.js" defer></script>
+</head>
+<body>
+<iframe class="frame-header" src="global/header.html"></iframe>
+<iframe class="frame-sidebar" src="global/sidebar.html"></iframe>
+
+<div class="main-container">
+    <div class="editor-container">
+
+    </div>
+
+    <div class="comment-divider">
+        comment
+    </div>
+    <ul class="comment-list">
+        <li class="comment">
+            <img class="writer-img" src="img/user-default/5.png" alt="user img"/>
+            <div class="small-triangle"></div>
+            <div class="content">
+                <div class="text">is gooooooooooooooooooooood!</div>
+                <div class="date">2021-02-19</div>
+            </div>
+        </li>
+        <li class="comment">
+            <img class="writer-img" src="img/user-default/6.png" alt="user img"/>
+            <div class="small-triangle"></div>
+            <div class="content">
+                <div class="text">Amazing!
+                </div>
+                <div class="date">2021-02-19</div>
+            </div>
+        </li>
+        <li class="comment">
+            <img class="writer-img" src="img/user-default/1.png" alt="user img"/>
+            <div class="small-triangle"></div>
+            <div class="content">
+                <div class="comment-input" contenteditable=true data-placeholder="input your think :)"></div>
+                <div class="comment-save-button">
+                    <i class="fas fa-pen"></i>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="page-control">
+        <div class="prev-page">
+            <i class="fas fa-chevron-left prev-page-button"></i>
+            <span class="prev-page-text">이전</span>
+        </div>
+        <div class="next-page">
+            <span class="next-page-text">다음</span>
+            <i class="fas fa-chevron-right next-page-button"></i>
+        </div>
+    </div>
+</div>
+
+<iframe class="frame-footer" src="global/footer.html"></iframe>
+</body>
+</html>
