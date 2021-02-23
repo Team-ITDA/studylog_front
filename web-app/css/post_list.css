@@ -34,6 +34,43 @@ body {
     margin: 1vh 0;
 }
 
+.search-box {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    margin: 5vh auto;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--blue-gray-white);
+}
+
+.search-icon {
+    display: inline-block;
+    font-size: xx-large;
+    width: 10%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-icon-button {
+    transform: translateY(25%);
+}
+
+.search-input {
+    display: inline-block;
+    float: right;
+    width: 90%;
+    height: 5vh;
+    font-size: medium;
+    text-indent: 1vw;
+}
+
+.search-box:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
 .posts-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -55,10 +92,9 @@ body {
 .card {
     display: grid;
     width: 15vw;
-    margin-left: 5vw;
-    /*grid-template-columns: 30vh;*/
     grid-template-rows: 20vh 30vh 5vh 7vh;
     grid-template-areas: 'image' 'text' 'hashtags' 'footer';
+    margin: 0 auto;
     border-radius: 18px;
     background-color: var(--white);
     box-shadow: 5px 5px 10px rgba(var(--blue-black-rgb), 0.5);
@@ -78,7 +114,6 @@ body {
 .card-image {
     grid-area: image;
     width: 100%;
-    /*background: url("../img/user-default/1.png");*/
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-size: cover;
@@ -87,8 +122,6 @@ body {
 
 .card-image-thumbnail {
     width: 100%;
-    /*height: 100%;*/
-
 }
 
 .card-text {
@@ -140,7 +173,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /*padding: 10px;*/
     color: var(--white);
 }
 
