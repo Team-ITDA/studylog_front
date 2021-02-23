@@ -7,7 +7,8 @@ body {
 .main-container {
     margin-top: 0;
     padding-top: 15vh;
-    height: 70vh;
+    min-height: 70vh;
+    height: auto;
 }
 
 input {
