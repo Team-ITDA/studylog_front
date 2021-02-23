@@ -13,17 +13,33 @@ body {
 
 .main-container-header {
     position: relative;
+    margin-bottom: 5vh;
 }
 
 .title {
-    font-size: xx-large;
+    display: inline-block;
+    float: left;
+    font-size: xxx-large;
     text-align: center;
 }
 
-.writer {
+.writer-info {
     float: right;
     font-size: x-large;
-    margin: 3vh auto;
+    text-align: center;
+    transform: translateY(50%);
+}
+
+.writer-image {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.writer-name {
+    display: inline-block;
 }
 
 .main-container-header:after {
