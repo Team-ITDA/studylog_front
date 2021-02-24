@@ -46,6 +46,26 @@ body {
     font-family: Handon3gyeopsal300g, sans-serif;
 }
 
+.writer {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.writer-image {
+    position: relative;
+    width: 5vw;
+    border-radius: 50%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.writer-name {
+    font-size: x-large;
+    margin-top: 1vh;
+}
+
 .comment-divider {
     margin-top: 5vh;
     border-top: 1px solid;
@@ -158,12 +178,14 @@ body {
 .prev-page,
 .next-page {
     position: relative;
-    display: inline-block;
+    width: 20vw;
+    height: 10vh;
     font-size: large;
-    padding: 2vh 2vw;
-    border: 1px solid var(--gray);
+    /*border: 1px solid var(--gray);*/
     transition: all 0.3s;
     cursor: pointer;
+    background-color: var(--white);
+    border-radius: 5px;
 }
 
 .prev-page {
@@ -178,6 +200,83 @@ body {
 .next-page:hover {
     background-color: rgba(var(--very-light-blue-rgb), 0.5);
     color: var(--white);
+}
+
+.prev-page-button,
+.next-page-button {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    font-size: xxx-large;
+    color: var(--light-blue-gray);
+    transform: translateY(-50%);
+    transition: all 0.3s;
+}
+
+.prev-page-button {
+    left: 7%;
+}
+
+.prev-page:hover .prev-page-button {
+    color: var(--white);
+    animation: prev-page-button-animation 1s ease-in-out 0s infinite forwards;
+}
+
+
+.next-page:hover .next-page-button {
+    color: var(--white);
+    animation: next-page-button-animation 1s ease-in-out 0s infinite forwards;
+}
+
+@keyframes prev-page-button-animation {
+    to {
+        transform: translate(-3%, -50%);
+    }
+    from {
+        transform: translate(0, -50%);
+    }
+}
+
+@keyframes next-page-button-animation {
+    to {
+        transform: translate(20%, -50%);
+    }
+    from {
+        transform: translate(0, -50%);
+    }
+}
+
+.prev-title,
+.next-title {
+    position: absolute;
+    display: inline-block;
+    top: 20%;
+    right: 10%;
+    width: 65%;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.next-title {
+    left: 10%;
+    text-align: left;
+}
+
+.prev-description,
+.next-description {
+    position: absolute;
+    width: 65%;
+    right: 10%;
+    bottom: 20%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.next-description {
+    left: 10%;
 }
 
 .next-page {
