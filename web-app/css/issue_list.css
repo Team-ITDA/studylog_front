@@ -16,8 +16,8 @@ body {
 }
 
 .title-icon {
-    font-size: xxx-large;
-    color: var(--blue-gray-white)
+    height: 10vh;
+    color: var(--dark-blue)
 }
 
 .title-header {
