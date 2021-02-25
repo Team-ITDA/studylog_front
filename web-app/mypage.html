@@ -82,64 +82,69 @@
 </div>
 <section class="blog-create-container hide">
     <article class="blog-create-box">
-        <div class="blog-create-header">
-            <span>create your team blog</span>
-            <div class="blog-close-button">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
         <form class="blog-create-form">
-            <div class="blog-create-icon blog-create-icon-name"><i class="fas fa-signature"></i></div>
-            <div>
-                <label for="blog-create-name" class="blog-create-label">name</label>
-                <input id="blog-create-name" type="text" class="blog-create-input" maxlength="40">
+            <div class="blog-create-image-container">
+                <img src="img/user-default/1.png" alt="blog-create-image" class="blog-create-image">
+                <div class="blog-create-images-edit-container">
+                    <i class="fas fa-plus blog-create-images-edit-button"></i>
+                </div>
             </div>
-            <div class="blog-create-icon blog-create-icon-info"><i class="fas fa-info"></i></div>
-            <div>
-                <label for="blog-create-introduce" class="blog-create-label">introduce</label>
-                <textarea id="blog-create-introduce" class="blog-create-input blog-create-input-introduce"
-                          maxlength="120" placeholder="블로그를 소개해보세요"></textarea>
+
+            <div class="blog-create-info">
+                <div class="blog-create-texts-container">
+                    <div class="blog-create-name">
+                        <label for="blog-create-name" class="blog-create-label">name</label>
+                        <input id="blog-create-name" type="text" class="blog-create-input" maxlength="40" placeholder="블로그 이름을 설정해주세요.">
+                    </div>
+                    <div class="blog-create-sub">
+                        <label for="blog-create-introduce" class="blog-create-label">introduce</label>
+                        <textarea id="blog-create-introduce" class="blog-create-input blog-create-input-introduce"
+                                  maxlength="120" placeholder="블로그를 소개해보세요."></textarea>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="blog-create-member-invite">
+                    <label for="blog-create-member" class="blog-create-label">member</label>
+                    <input id="blog-create-member" type="text" class="blog-create-input" maxlength="40"
+                           placeholder="초대받는 분의 이메일을 입력하세요">
+                </div>
+                <ul class="blog-create-member-list">
+                    <li class="blog-create-member-item">
+                        <img class="blog-create-member-img" src="img/user-default/3.png" alt="user img">
+                        <div class="blog-create-member-texts">
+                            <span class="blog-create-member-name">김영곤</span>
+                            <span class="blog-create-member-email">dudrhs571@gmail.com</span>
+                        </div>
+                    </li>
+                    <li class="blog-create-member-item">
+                        <img class="blog-create-member-img" src="img/user-default/3.png" alt="user img">
+                        <div class="blog-create-member-texts">
+                            <span class="blog-create-member-name">김영곤</span>
+                            <span class="blog-create-member-email">dudrhs571@gmail.com</span>
+                        </div>
+                    </li>
+                    <li class="blog-create-member-item">
+                        <img class="blog-create-member-img" src="img/user-default/3.png" alt="user img">
+                        <div class="blog-create-member-texts">
+                            <span class="blog-create-member-name">김영곤</span>
+                            <span class="blog-create-member-email">dudrhs571@gmail.com</span>
+                        </div>
+                    </li>
+                    <li class="blog-create-member-item">
+                        <img class="blog-create-member-img" src="img/user-default/3.png" alt="user img">
+                        <div class="blog-create-member-texts">
+                            <span class="blog-create-member-name">김영곤</span>
+                            <span class="blog-create-member-email">dudrhs571@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="blog-create-save-button">저장</div>
             </div>
-            <div class="divider"></div>
-            <div class="blog-create-icon blog-create-icon-member"><i class="fas fa-user"></i></div>
-            <div>
-                <label for="blog-create-member" class="blog-create-label">member</label>
-                <input id="blog-create-member" type="text" class="blog-create-input" maxlength="40"
-                       placeholder="초대받는 분의 이메일을 입력하세요">
-            </div>
-            <ul class="blog-create-member-list">
-                <li class="blog-create-member-item">
-                    <div><img class="blog-create-member-img" src="img/user-default/3.png" alt="user img"></div>
-                    <div>
-                        <div>김영곤</div>
-                        <div>dudrhs571@gmail.com</div>
-                    </div>
-                </li>
-                <li class="blog-create-member-item">
-                    <div><img class="blog-create-member-img" src="img/user-default/3.png" alt="user img"></div>
-                    <div>
-                        <div>김영곤</div>
-                        <div>dudrhs571@gmail.com</div>
-                    </div>
-                </li>
-                <li class="blog-create-member-item">
-                    <div><img class="blog-create-member-img" src="img/user-default/3.png" alt="user img"></div>
-                    <div>
-                        <div>김영곤</div>
-                        <div>dudrhs571@gmail.com</div>
-                    </div>
-                </li>
-                <li class="blog-create-member-item">
-                    <div><img class="blog-create-member-img" src="img/user-default/3.png" alt="user img"></div>
-                    <div>
-                        <div>김영곤</div>
-                        <div>dudrhs571@gmail.com</div>
-                    </div>
-                </li>
-            </ul>
-            <div class="blog-create-save-button">저장</div>
         </form>
     </article>
+    <i class="fas fa-times blog-close-button"></i>
 </section>
 <iframe class="frame-footer" src="global/footer.html"></iframe>
 </body>
