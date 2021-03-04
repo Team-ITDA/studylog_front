@@ -99,12 +99,13 @@ const viewer = toastui.Editor.factory({
     initialValue: content
 });
 
+
 const editorContainer = document.querySelector('.editor-container');
 const tuiEditorContents = editorContainer.querySelector('.tui-editor-contents');
 const tuiEditorContentsChildren = tuiEditorContents.children;
 const tuiEditorContentsChildrenArray = [...tuiEditorContentsChildren];
-tuiEditorContentsChildrenArray.forEach((element) => {
 
+tuiEditorContentsChildrenArray.forEach((element) => {
     function createPlusButton() {
         const newDiv = document.createElement('div');
         newDiv.classList.add('plus-buttons')
@@ -174,11 +175,12 @@ plusButtonsIcons.forEach((element) => {
 
             const newReviewCommentSave = document.createElement('button');
             newReviewCommentSave.classList.add('review-comment-save');
+            newReviewCommentSave.setAttribute('onclick', 'commentSave(this)');
             newReviewCommentSave.innerText = '저장';
 
             const newReviewCommentReset = document.createElement('button');
             newReviewCommentReset.classList.add('review-comment-reset');
-            newReviewCommentReset.setAttribute('onclick', 'commentResetButton(this)');
+            newReviewCommentReset.setAttribute('onclick', 'commentReset(this)');
             newReviewCommentReset.innerText = '취소';
 
             newReviewCommentHeader.appendChild(newReviewCommentButtons);
@@ -211,30 +213,166 @@ plusButtonsIcons.forEach((element) => {
     });
 });
 
-function commentResetButton(item) {
+function commentSave(item) {
+    const isConfirm = confirm('Would you like to leave this message?');
+    if (isConfirm) {
+        const itemContainer = item.closest('.review-comment-container');
+        const resetButton = itemContainer.querySelector('.review-comment-reset');
+        const comment = itemContainer.querySelector('.review-comment-input');
+        item.remove();
+        resetButton.remove();
+        comment.setAttribute('contenteditable', false);
+    }
+}
+
+function commentReset(item) {
     const itemContainer = item.closest('.review-comment-container');
     itemContainer.remove();
 }
 
-const reviewersEditButton = document.querySelector('.reviewers-edit');
-const reviewersSelect = document.querySelector('.reviewers-select');
-const reviewersList = document.querySelector('.reviewers-list');
 
-reviewersEditButton.addEventListener('click', function () {
-    if (!reviewersSelect.classList.contains('active')) {
-        reviewersSelect.classList.add('active');
-        reviewersList.style.display = 'none';
-    } else {
-        reviewersSelect.classList.remove('active');
-        reviewersList.style.display = 'block';
+const commentApproveButton = document.querySelector('.comment-approve-button');
+const commentList = document.querySelector('.comment-list');
+commentApproveButton.addEventListener('click', function (e) {
+    const isConfirm = confirm('Would you like to approve this article?');
+    if (isConfirm) {
+        const newComment = document.createElement('li');
+        newComment.classList.add('comment');
+
+        const newCommentWriterImg = document.createElement('img');
+        newCommentWriterImg.classList.add('writer-img');
+        newCommentWriterImg.setAttribute('src', 'img/user-default/7.png');
+        newCommentWriterImg.setAttribute('alt', 'user-image');
+
+        const newSmallTriangle = document.createElement('span');
+        newSmallTriangle.classList.add('small-triangle');
+
+        const newCommentContent = document.createElement('div');
+        newCommentContent.classList.add('comment-content');
+
+        newComment.appendChild(newCommentWriterImg);
+        newComment.appendChild(newSmallTriangle);
+        newComment.appendChild(newCommentContent);
+
+        const newCommentHeader = document.createElement('div');
+        newCommentHeader.classList.add('comment-header');
+
+        newCommentContent.appendChild(newCommentHeader);
+
+        const newCommentWriter = document.createElement('span');
+        newCommentWriter.classList.add('comment-writer');
+        newCommentWriter.innerText = 'Jinmin';
+
+        const newCommentDate = document.createElement('span');
+        newCommentDate.classList.add('comment-date');
+        newCommentDate.innerText = '2021-03-02';
+
+        newCommentHeader.appendChild(newCommentWriter);
+        newCommentHeader.appendChild(newCommentDate);
+
+        const newCommentText = document.createElement('div');
+        newCommentText.classList.add('comment-text');
+        newCommentText.innerText = 'Jinmin has approved the post.'
+
+        newCommentContent.appendChild(newCommentText);
+
+        commentList.appendChild(newComment);
+
+        commentApproveButton.style.display = 'none';
+    }
+});
+
+const commentSaveButton = document.querySelector('.comment-save-button');
+commentSaveButton.addEventListener('click', function (e) {
+    const isConfirm = confirm('Would you like to leave a comment?');
+    if (isConfirm) {
+
+        const newComment = document.createElement('li');
+        newComment.classList.add('comment');
+
+        const newCommentWriterImg = document.createElement('img');
+        newCommentWriterImg.classList.add('writer-img');
+        newCommentWriterImg.setAttribute('src', 'img/user-default/7.png');
+        newCommentWriterImg.setAttribute('alt', 'user-image');
+
+        const newSmallTriangle = document.createElement('span');
+        newSmallTriangle.classList.add('small-triangle');
+
+        const newCommentContent = document.createElement('div');
+        newCommentContent.classList.add('comment-content');
+
+        newComment.appendChild(newCommentWriterImg);
+        newComment.appendChild(newSmallTriangle);
+        newComment.appendChild(newCommentContent);
+
+        const newCommentHeader = document.createElement('div');
+        newCommentHeader.classList.add('comment-header');
+
+        newCommentContent.appendChild(newCommentHeader);
+
+        const newCommentWriter = document.createElement('span');
+        newCommentWriter.classList.add('comment-writer');
+        newCommentWriter.innerText = 'Jinmin';
+
+        const newCommentDate = document.createElement('span');
+        newCommentDate.classList.add('comment-date');
+        newCommentDate.innerText = '2021-03-02';
+
+        newCommentHeader.appendChild(newCommentWriter);
+        newCommentHeader.appendChild(newCommentDate);
+
+        const newCommentText = document.createElement('div');
+        newCommentText.classList.add('comment-text');
+        const commentText = document.querySelector('.comment-input').innerHTML;
+        newCommentText.innerText = commentText;
+
+        newCommentContent.appendChild(newCommentText);
+
+        commentList.appendChild(newComment);
+    }
+});
+
+const reviewers = document.querySelector('.reviewers');
+reviewers.addEventListener('click', function (event) {
+    let target = event.target;
+    const reviewersEditButton = reviewers.querySelector('.reviewers-edit-button');
+    const reviewersEditTitle = reviewers.querySelector('.reviewers-edit-title');
+    const reviewersSelectedList = reviewers.querySelector('.reviewers-selected-list');
+    const reviewersUnselectedList = reviewers.querySelector('.reviewers-unselected-list');
+
+    if (!target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
+        target.classList.replace('fa-user-edit', 'fa-sign-out-alt');
+        target.classList.add('active');
+        reviewersUnselectedList.classList.add('view');
+        reviewersEditTitle.classList.add('view');
+    } else if(target.classList.contains('active') && target.classList.contains('reviewers-edit-button')){
+        target.classList.replace('fa-sign-out-alt', 'fa-user-edit');
+        target.classList.remove('active');
+        reviewersUnselectedList.classList.remove('view');
+        reviewersEditTitle.classList.remove('view');
+    }
+
+    if (target.classList.contains('reviewers-selected-item') && reviewersEditButton.classList.contains('active')) {
+        target.classList.replace('reviewers-selected-item', 'reviewers-unselected-item');
+        reviewersUnselectedList.appendChild(target);
+    } else if (target.classList.contains('reviewers-unselected-item') && reviewersEditButton.classList.contains('active')) {
+        target.classList.replace('reviewers-unselected-item', 'reviewers-selected-item');
+        reviewersSelectedList.appendChild(target);
+    } else if (target.classList.contains('reviewers-edit-button')) {
+
     }
 });
 
 
+// 이벤트에 대한 등록이 옮겨진 것에 대한 것은 안되어있음
+// event.target -> selectList(unselectList)
 
+// 현재 아이템 하나하나에다가 이벤트를 걸고있는데
+// 이벤트 위임은 아이템들을 담고있는 컨테이너에 이벤트를 적용
+// reviewersUnselectedItem이 아닌 reviewersUnselectedList에다가 함수를 만들어 이벤트를 적용시키는 개념
 
-
-
+// https://hyeok999.github.io/2019/10/14/javascript-preview-1314/
+// 이거는 전역변수에 대하여 공부해야 할 것
 
 
 

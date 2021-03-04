@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Studylog</title>
 
-<!--    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">-->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
     <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
     <link rel="stylesheet" href="css/review_view.css">
@@ -29,7 +27,6 @@
         <span class="view-number">291,323,239 views</span>
     </div>
 
-
     <div class="editor-container">
 
     </div>
@@ -37,36 +34,36 @@
     <div class="reviewers">
         <div class="reviewers-header">
             <h3 class="reviewers-title">reviewers</h3>
-            <i class="fas fa-user-edit reviewers-edit"></i>
+            <i class="fas fa-user-edit reviewers-edit-button"></i>
         </div>
-        <ul class="reviewers-list">
-            <li class="reviewers-item">
-                <img class="reviewers-item-img" src="img/user-default/1.png" alt="reviewer-01">
-                <span class="reviewers-item-name">Jinmin</span>
-            </li>
-            <li class="reviewers-item">
-                <img class="reviewers-item-img" src="img/user-default/2.png" alt="reviewer-02">
-                <span class="reviewers-item-name">zeroGone</span>
-            </li>
-        </ul>
-        <div class="reviewers-select">
-            <h4 class="reviewers-select-title">Select the person to register.</h4>
-            <ul class="reviewers-select-list">
-                <li class="reviewers-select-item">
-                    <img class="reviewers-select-item-img" src="img/user-default/4.png" alt="reviewer-select-01">
-                    <span class="reviewers-select-item-name">minsub</span>
+        <div class="reviewers-edit">
+            <ul class="reviewers-selected-list">
+                <li class="reviewers-selected-item">
+                    <img class="reviewers-selected-item-img" src="img/user-default/1.png" alt="reviewer-01">
+                    <span class="reviewers-selected-item-name">Jinmin</span>
                 </li>
-                <li class="reviewers-select-item">
-                    <img class="reviewers-select-item-img" src="img/user-default/3.png" alt="reviewer-select-02">
-                    <span class="reviewers-select-item-name">hugi</span>
+                <li class="reviewers-selected-item">
+                    <img class="reviewers-selected-item-img" src="img/user-default/2.png" alt="reviewer-02">
+                    <span class="reviewers-selected-item-name">zeroGone</span>
                 </li>
-                <li class="reviewers-select-item">
-                    <img class="reviewers-select-item-img" src="img/user-default/5.png" alt="reviewer-select-03">
-                    <span class="reviewers-select-item-name">wisdom</span>
+            </ul>
+            <h4 class="reviewers-edit-title">Select the person to register.</h4>
+            <ul class="reviewers-unselected-list">
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/4.png" alt="reviewers-unselected-01">
+                    <span class="reviewers-unselected-item-name">minsub</span>
                 </li>
-                <li class="reviewers-select-item">
-                    <img class="reviewers-select-item-img" src="img/user-default/7.png" alt="reviewer-select-04">
-                    <span class="reviewers-select-item-name">hyung1</span>
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/3.png" alt="reviewers-unselected-02">
+                    <span class="reviewers-unselected-item-name">hugi</span>
+                </li>
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/5.png" alt="reviewers-unselected-03">
+                    <span class="reviewers-unselected-item-name">wisdom</span>
+                </li>
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/7.png" alt="reviewers-unselected-04">
+                    <span class="reviewers-unselected-item-name">hyung1</span>
                 </li>
             </ul>
         </div>
@@ -103,15 +100,12 @@
                 <div class="comment-text">Amazing</div>
             </div>
         </li>
-        <li>
-            <div class="comment-input-box">
-                <div class="comment-input" contenteditable=true data-placeholder="input your think :)"></div>
-            </div>
-            <div class="comment-save-button">
-                <i class="fas fa-pen"></i>
-            </div>
-        </li>
     </ul>
+    <div class="comment-input-container">
+        <div class="comment-input" contenteditable=true data-placeholder="input your think :)"></div>
+        <button class="comment-save-button" value="Comment">Comment</button>
+        <button class="comment-approve-button" value="Approve">Approve</button>
+    </div>
     <div class="page-control">
         <div class="prev-page">
             <i class="fas fa-chevron-circle-left prev-page-button"></i>

@@ -72,7 +72,7 @@ body {
 }
 
 .comment-list {
-    margin: 5vh auto 10vh auto;
+    margin: 5vh auto;
     font-size: larger;
     box-sizing: border-box;
 }
@@ -134,10 +134,17 @@ body {
     margin-top: 1vh;
 }
 
-.comment-input-box {
-    margin-top: 4vh;
-    background-color: white;
+.comment-input-container {
+    display: block;
     width: 100%;
+    height: 100%;
+    margin-bottom: 5vh;
+}
+
+.comment-input-container:after {
+    display: block;
+    content: '';
+    clear: both;
 }
 
 .comment-input {
@@ -146,6 +153,7 @@ body {
     border-radius: 5px;
     padding: 1vw;
     outline: none;
+    background-color: white;
     box-sizing: border-box;
 }
 
@@ -155,19 +163,40 @@ body {
     color: var(--gray);
 }
 
-.comment-save-button {
+
+.comment-save-button,
+.comment-approve-button {
     float: right;
-    margin-top: 1vh;
     width: 5vw;
+    margin-top: 2vh;
     line-height: 5vh;
     vertical-align: middle;
     border-radius: 5px;
+    border: none;
     background-color: var(--leaf);
     color: white;
     text-align: center;
     cursor: pointer;
+    font-family: Handon3gyeopsal300g, sans-serif;
+    font-size: medium;
 }
 
+.comment-approve-button {
+    margin-right: 3vw;
+    background-color: var(--light-sky);
+}
+
+.comment-save-button:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.comment-approve-button:after {
+    display: block;
+    content: '';
+    clear: both;
+}
 
 .page-control {
     position: relative;
@@ -291,6 +320,7 @@ body {
 
 .mouseover {
     transform: scale(1.01);
+    z-index: 20;
 }
 
 .mouseover:hover .plus-buttons {
@@ -321,6 +351,11 @@ body {
     top: 0;
     right: -19vw;
     width: 18vw;
+    /*z-index: 5;*/
+}
+
+.review-comment-container:hover {
+    z-index: 100;
 }
 
 .review-comment-header:before {
@@ -335,12 +370,14 @@ body {
     transform: rotate(45deg);
 }
 
+
 .review-comment-content {
     width: 90%;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 5px;
     box-sizing: border-box;
 }
+
 
 .review-comment-header {
     padding: 1vh 1vw;
@@ -348,6 +385,7 @@ body {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     color: var(--dark-blue);
+    font-size: medium;
 }
 
 .review-comment-writer {
@@ -357,7 +395,9 @@ body {
 
 .review-comment-date {
     margin-left: 1vw;
+    font-family: Handon3gyeopsal300g, sans-serif;
     font-size: small;
+    font-weight: normal;
 }
 
 .review-comment-buttons {
@@ -409,10 +449,14 @@ body {
     font-weight: normal;
 }
 
-.reviewers-edit {
+.reviewers-edit-button {
     display: inline-block;
     float: right;
     cursor: pointer;
+}
+
+.reviewers-edit-button.active {
+    transform: rotate(180deg);
 }
 
 .reviewers-header:after {
@@ -421,55 +465,82 @@ body {
     clear: both;
 }
 
-.reviewers-list,
-.reviewers-select-list{
+/*.reviewers-list,*/
+.reviewers-selected-list,
+.reviewers-unselected-list {
     position: relative;
     display: block;
     border: 1px solid var(--gray);
     border-radius: 0 0 5px 5px;
 }
 
-.reviewers-item,
-.reviewers-select-item {
+.reviewers-selected-list {
+    border-radius: 0;
+}
+
+/*.reviewers-item,*/
+.reviewers-selected-item,
+.reviewers-unselected-item {
     padding: 5px;
     border-bottom: 1px solid var(--gray);
 }
 
-.reviewers-item:last-child,
-.reviewers-select-item:last-child {
+.reviewers-selected-item {
+    background-color: var(--white);
+}
+
+.reviewers-selected-item,
+.reviewers-unselected-item {
+    cursor: pointer;
+}
+
+/*.reviewers-item:last-child,*/
+.reviewers-selected-item:last-child,
+.reviewers-unselected-item {
     border-bottom: none;
     border-radius: 0 0 5px 5px;
 }
 
-.reviewers-item:hover,
-.reviewers-select-item:hover {
+/*.reviewers-item:hover,*/
+.reviewers-selected-item:hover,
+.reviewers-unselected-item:hover {
     background-color: var(--white);
     font-weight: bold;
 }
 
-.reviewers-item-img,
-.reviewers-select-item-img {
+/*.reviewers-item-img,*/
+.reviewers-selected-item-img,
+.reviewers-unselected-item-img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     vertical-align: middle;
 }
 
-.reviewers-select {
-    display: none;
+.reviewers-edit {
+    /*display: none;*/
     position: absolute;
     top: 4vh;
     width: 100%;
 }
 
-.reviewers-select.active{
-    display: block;
-}
-
-.reviewers-select-title {
+.reviewers-edit-title {
     font-weight: normal;
     font-size: small;
     padding: 1vh;
     border-left: 1px solid var(--gray);
     border-right: 1px solid var(--gray);
+    display: none;
+}
+
+.reviewers-unselected-list {
+    display: none;
+}
+
+.reviewers-edit-title.view {
+    display: block;
+}
+
+.reviewers-unselected-list.view {
+    display: block;
 }
