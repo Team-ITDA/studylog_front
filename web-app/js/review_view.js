@@ -102,8 +102,7 @@ const viewer = toastui.Editor.factory({
 
 const editorContainer = document.querySelector('.editor-container');
 const tuiEditorContents = editorContainer.querySelector('.tui-editor-contents');
-const tuiEditorContentsChildren = tuiEditorContents.children;
-const tuiEditorContentsChildrenArray = [...tuiEditorContentsChildren];
+const tuiEditorContentsChildrenArray = [...tuiEditorContents.children];
 
 tuiEditorContentsChildrenArray.forEach((element) => {
     function createPlusButton() {
@@ -130,23 +129,39 @@ tuiEditorContentsChildrenArray.forEach((element) => {
 
         element.appendChild(createPlusButton());
     } else {
-        const tuiEditorContentsChildrenArrayChildren = element.children;
-        const tuiEditorContentsChildrenArrayChildrenArray = [...tuiEditorContentsChildrenArrayChildren];
-        tuiEditorContentsChildrenArrayChildrenArray.forEach((e) => {
-            e.addEventListener('mouseover', function (event) {
-                e.classList.add('mouseover');
+        const tuiEditorContentsChildrenArrayChildrenArray = [...element.children];
+        tuiEditorContentsChildrenArrayChildrenArray.forEach((el) => {
+            el.addEventListener('mouseover', function (event) {
+                el.classList.add('mouseover');
             });
-            e.addEventListener('mouseout', function (event) {
-                e.classList.remove('mouseover');
+            el.addEventListener('mouseout', function (event) {
+                el.classList.remove('mouseover');
             });
-            e.append(createPlusButton());
+            el.append(createPlusButton());
         });
     }
 });
 
-const plusButtonsIcons = document.querySelectorAll('.plus-buttons-icon');
-plusButtonsIcons.forEach((element) => {
-    element.addEventListener('click', function (e) {
+function commentSave(item) {
+    const isConfirm = confirm('Would you like to leave this message?');
+    if (isConfirm) {
+        const itemContainer = item.closest('.review-comment-container');
+        const resetButton = itemContainer.querySelector('.review-comment-reset');
+        const comment = itemContainer.querySelector('.review-comment-input');
+        item.remove();
+        resetButton.remove();
+        comment.setAttribute('contenteditable', false);
+    }
+}
+
+function commentReset(item) {
+    const itemContainer = item.closest('.review-comment-container');
+    itemContainer.remove();
+}
+
+editorContainer.addEventListener('click', function (event) {
+    const target = event.target;
+    if (target.classList.contains('plus-buttons-icon')) {
         function createReviewComment() {
             const newReviewCommentContainer = document.createElement('div');
             newReviewCommentContainer.classList.add('review-comment-container');
@@ -196,7 +211,7 @@ plusButtonsIcons.forEach((element) => {
             return newReviewCommentContainer;
         }
 
-        const parent = element.parentNode.parentNode;
+        const parent = target.parentNode.parentNode;
         let hasReviewContainer = false;
 
         [...parent.children].forEach((item) => {
@@ -210,131 +225,81 @@ plusButtonsIcons.forEach((element) => {
         if (!hasReviewContainer) {
             parent.appendChild(createReviewComment());
         }
-    });
-});
-
-function commentSave(item) {
-    const isConfirm = confirm('Would you like to leave this message?');
-    if (isConfirm) {
-        const itemContainer = item.closest('.review-comment-container');
-        const resetButton = itemContainer.querySelector('.review-comment-reset');
-        const comment = itemContainer.querySelector('.review-comment-input');
-        item.remove();
-        resetButton.remove();
-        comment.setAttribute('contenteditable', false);
-    }
-}
-
-function commentReset(item) {
-    const itemContainer = item.closest('.review-comment-container');
-    itemContainer.remove();
-}
-
-
-const commentApproveButton = document.querySelector('.comment-approve-button');
-const commentList = document.querySelector('.comment-list');
-commentApproveButton.addEventListener('click', function (e) {
-    const isConfirm = confirm('Would you like to approve this article?');
-    if (isConfirm) {
-        const newComment = document.createElement('li');
-        newComment.classList.add('comment');
-
-        const newCommentWriterImg = document.createElement('img');
-        newCommentWriterImg.classList.add('writer-img');
-        newCommentWriterImg.setAttribute('src', 'img/user-default/7.png');
-        newCommentWriterImg.setAttribute('alt', 'user-image');
-
-        const newSmallTriangle = document.createElement('span');
-        newSmallTriangle.classList.add('small-triangle');
-
-        const newCommentContent = document.createElement('div');
-        newCommentContent.classList.add('comment-content');
-
-        newComment.appendChild(newCommentWriterImg);
-        newComment.appendChild(newSmallTriangle);
-        newComment.appendChild(newCommentContent);
-
-        const newCommentHeader = document.createElement('div');
-        newCommentHeader.classList.add('comment-header');
-
-        newCommentContent.appendChild(newCommentHeader);
-
-        const newCommentWriter = document.createElement('span');
-        newCommentWriter.classList.add('comment-writer');
-        newCommentWriter.innerText = 'Jinmin';
-
-        const newCommentDate = document.createElement('span');
-        newCommentDate.classList.add('comment-date');
-        newCommentDate.innerText = '2021-03-02';
-
-        newCommentHeader.appendChild(newCommentWriter);
-        newCommentHeader.appendChild(newCommentDate);
-
-        const newCommentText = document.createElement('div');
-        newCommentText.classList.add('comment-text');
-        newCommentText.innerText = 'Jinmin has approved the post.'
-
-        newCommentContent.appendChild(newCommentText);
-
-        commentList.appendChild(newComment);
-
-        commentApproveButton.style.display = 'none';
     }
 });
 
-const commentSaveButton = document.querySelector('.comment-save-button');
-commentSaveButton.addEventListener('click', function (e) {
-    const isConfirm = confirm('Would you like to leave a comment?');
-    if (isConfirm) {
 
-        const newComment = document.createElement('li');
-        newComment.classList.add('comment');
+const commentInputContainer = document.querySelector('.comment-input-container');
+commentInputContainer.addEventListener('click', function (event) {
+    const target = event.target;
 
-        const newCommentWriterImg = document.createElement('img');
-        newCommentWriterImg.classList.add('writer-img');
-        newCommentWriterImg.setAttribute('src', 'img/user-default/7.png');
-        newCommentWriterImg.setAttribute('alt', 'user-image');
+    let isConfirm = false;
 
-        const newSmallTriangle = document.createElement('span');
-        newSmallTriangle.classList.add('small-triangle');
+    const newComment = document.createElement('li');
+    newComment.classList.add('comment');
 
-        const newCommentContent = document.createElement('div');
-        newCommentContent.classList.add('comment-content');
+    const newCommentWriterImg = document.createElement('img');
+    newCommentWriterImg.classList.add('writer-img');
+    newCommentWriterImg.setAttribute('src', 'img/user-default/7.png');
+    newCommentWriterImg.setAttribute('alt', 'user-image');
 
-        newComment.appendChild(newCommentWriterImg);
-        newComment.appendChild(newSmallTriangle);
-        newComment.appendChild(newCommentContent);
+    const newSmallTriangle = document.createElement('span');
+    newSmallTriangle.classList.add('small-triangle');
 
-        const newCommentHeader = document.createElement('div');
-        newCommentHeader.classList.add('comment-header');
+    const newCommentContent = document.createElement('div');
+    newCommentContent.classList.add('comment-content');
 
-        newCommentContent.appendChild(newCommentHeader);
+    newComment.appendChild(newCommentWriterImg);
+    newComment.appendChild(newSmallTriangle);
+    newComment.appendChild(newCommentContent);
 
-        const newCommentWriter = document.createElement('span');
-        newCommentWriter.classList.add('comment-writer');
-        newCommentWriter.innerText = 'Jinmin';
+    const newCommentHeader = document.createElement('div');
+    newCommentHeader.classList.add('comment-header');
 
-        const newCommentDate = document.createElement('span');
-        newCommentDate.classList.add('comment-date');
-        newCommentDate.innerText = '2021-03-02';
+    newCommentContent.appendChild(newCommentHeader);
 
-        newCommentHeader.appendChild(newCommentWriter);
-        newCommentHeader.appendChild(newCommentDate);
+    const newCommentWriter = document.createElement('span');
+    newCommentWriter.classList.add('comment-writer');
+    newCommentWriter.innerText = 'Jinmin';
 
-        const newCommentText = document.createElement('div');
-        newCommentText.classList.add('comment-text');
-        const commentText = document.querySelector('.comment-input').innerHTML;
-        newCommentText.innerText = commentText;
+    const newCommentDate = document.createElement('span');
+    newCommentDate.classList.add('comment-date');
+    newCommentDate.innerText = '2021-03-02';
 
-        newCommentContent.appendChild(newCommentText);
+    newCommentHeader.appendChild(newCommentWriter);
+    newCommentHeader.appendChild(newCommentDate);
 
-        commentList.appendChild(newComment);
+    const newCommentText = document.createElement('div');
+    newCommentText.classList.add('comment-text');
+
+    const commentList = document.querySelector('.comment-list');
+
+    if (target.classList.contains('comment-approve-button')) {
+        isConfirm = confirm('Would you like to approve this article?');
+        if (isConfirm) {
+            newCommentText.innerText = 'Jinmin has approved the post.';
+            newCommentContent.appendChild(newCommentText);
+            commentList.appendChild(newComment);
+            target.style.display = 'none';
+        }
+    } else if (target.classList.contains('comment-save-button')) {
+        const message = document.querySelector('.comment-input').innerHTML;
+        if (message === '') {
+            alert('Please enter your message.');
+        } else {
+            isConfirm = confirm('Would you like to leave a comment?');
+            if (isConfirm) {
+                newCommentText.innerText = message;
+                newCommentContent.appendChild(newCommentText);
+                commentList.appendChild(newComment);
+            }
+        }
     }
 });
 
 const reviewers = document.querySelector('.reviewers');
 reviewers.addEventListener('click', function (event) {
-    let target = event.target;
+    const target = event.target;
     const reviewersEditButton = reviewers.querySelector('.reviewers-edit-button');
     const reviewersEditTitle = reviewers.querySelector('.reviewers-edit-title');
     const reviewersSelectedList = reviewers.querySelector('.reviewers-selected-list');
@@ -345,7 +310,7 @@ reviewers.addEventListener('click', function (event) {
         target.classList.add('active');
         reviewersUnselectedList.classList.add('view');
         reviewersEditTitle.classList.add('view');
-    } else if(target.classList.contains('active') && target.classList.contains('reviewers-edit-button')){
+    } else if (target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
         target.classList.replace('fa-sign-out-alt', 'fa-user-edit');
         target.classList.remove('active');
         reviewersUnselectedList.classList.remove('view');
@@ -362,18 +327,3 @@ reviewers.addEventListener('click', function (event) {
 
     }
 });
-
-
-// 이벤트에 대한 등록이 옮겨진 것에 대한 것은 안되어있음
-// event.target -> selectList(unselectList)
-
-// 현재 아이템 하나하나에다가 이벤트를 걸고있는데
-// 이벤트 위임은 아이템들을 담고있는 컨테이너에 이벤트를 적용
-// reviewersUnselectedItem이 아닌 reviewersUnselectedList에다가 함수를 만들어 이벤트를 적용시키는 개념
-
-// https://hyeok999.github.io/2019/10/14/javascript-preview-1314/
-// 이거는 전역변수에 대하여 공부해야 할 것
-
-
-
-
