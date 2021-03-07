@@ -104,40 +104,37 @@ const editorContainer = document.querySelector('.editor-container');
 const tuiEditorContents = editorContainer.querySelector('.tui-editor-contents');
 const tuiEditorContentsChildrenArray = [...tuiEditorContents.children];
 
+function editorMouseEvent(element) {
+    element.addEventListener('mouseover', function (event) {
+        element.classList.add('mouseover');
+    });
+    element.addEventListener('mouseout', function (event) {
+        element.classList.remove('mouseover');
+    });
+
+    return element;
+}
+
 tuiEditorContentsChildrenArray.forEach((element) => {
-    function createPlusButton() {
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('plus-buttons')
-        const newTag = document.createElement('i');
-        newTag.classList.add('fas');
-        newTag.classList.add('fa-plus-square');
-        newTag.classList.add('plus-buttons-icon');
-        newDiv.appendChild(newTag);
-
-        return newDiv;
-    }
-
     element.classList.add('plus-buttons-container');
 
     if (element.children.length === 0 || element.nodeName === 'PRE' || element.nodeName === 'P') {
-        element.addEventListener('mouseover', function (event) {
-            element.classList.add('mouseover');
-        });
-        element.addEventListener('mouseout', function (event) {
-            element.classList.remove('mouseover');
-        });
+        editorMouseEvent(element);
 
-        element.appendChild(createPlusButton());
+        const plusButton = createElement('div', 'plus-buttons');
+        const tag = createElement('i', ['fas', 'fa-plus-square', 'plus-buttons-icon']);
+        plusButton.appendChild(tag);
+        element.appendChild(plusButton);
+
     } else {
         const tuiEditorContentsChildrenArrayChildrenArray = [...element.children];
         tuiEditorContentsChildrenArrayChildrenArray.forEach((el) => {
-            el.addEventListener('mouseover', function (event) {
-                el.classList.add('mouseover');
-            });
-            el.addEventListener('mouseout', function (event) {
-                el.classList.remove('mouseover');
-            });
-            el.append(createPlusButton());
+            editorMouseEvent(el);
+
+            const plusButton = createElement('div', 'plus-buttons');
+            const tag = createElement('i', ['fas', 'fa-plus-square', 'plus-buttons-icon']);
+            plusButton.appendChild(tag);
+            el.append(plusButton);
         });
     }
 });
@@ -159,71 +156,70 @@ function commentReset(item) {
     itemContainer.remove();
 }
 
+function createElement(tagName, className, text, attributeNames, attributeValues) {
+    const element = document.createElement(tagName);
+
+    if (className !== undefined) {
+        if (typeof className === 'object') {
+            for (let index in className) {
+                element.classList.add(className[index]);
+            }
+        } else {
+            element.classList.add(className);
+        }
+    }
+
+    if (text !== undefined) {
+        element.innerText = text;
+    }
+
+    if (attributeNames !== undefined && attributeValues !== undefined) {
+        if (typeof attributeNames === 'object') {
+            for (let index in attributeNames) {
+                element.setAttribute(attributeNames[index], attributeValues[index]);
+            }
+        } else {
+            element.setAttribute(attributeNames, attributeValues);
+        }
+
+    }
+
+    return element;
+}
+
+
+function createReviewComment() {
+    const newReviewCommentContainer = createElement('div', ['review-comment-container', 'ㅅㅂ']);
+    const newReviewCommentHeader = createElement('div', 'review-comment-header');
+    newReviewCommentContainer.appendChild(newReviewCommentHeader);
+
+    const newReviewCommentWriter = createElement('span', 'review-comment-writer', 'Jinmin');
+    const newReviewCommentDate = createElement('span', 'review-comment-date', '2021-03-01');
+    const newReviewCommentSave = createElement('button', 'review-comment-save', '저장', 'onclick', 'commentSave(this)');
+    const newReviewCommentReset = createElement('button', 'review-comment-reset', '취소', 'onclick', 'commentReset(this)');
+    newReviewCommentHeader.appendChild(newReviewCommentWriter);
+    newReviewCommentHeader.appendChild(newReviewCommentDate);
+    newReviewCommentHeader.appendChild(newReviewCommentReset);
+    newReviewCommentHeader.appendChild(newReviewCommentSave);
+
+    const newReviewCommentInput = createElement('div', 'review-comment-input', undefined, ['contenteditable', 'data-placeholder'], ['true', 'input your think :)']);
+    newReviewCommentContainer.appendChild(newReviewCommentInput);
+
+    return newReviewCommentContainer;
+}
+
 editorContainer.addEventListener('click', function (event) {
     const target = event.target;
     if (target.classList.contains('plus-buttons-icon')) {
-        function createReviewComment() {
-            const newReviewCommentContainer = document.createElement('div');
-            newReviewCommentContainer.classList.add('review-comment-container');
-
-            const newReviewCommentContent = document.createElement('div');
-            newReviewCommentContent.classList.add('review-comment-content');
-            newReviewCommentContainer.appendChild(newReviewCommentContent);
-
-            const newReviewCommentHeader = document.createElement('div');
-            newReviewCommentHeader.classList.add('review-comment-header');
-            newReviewCommentContent.appendChild(newReviewCommentHeader);
-
-            const newReviewCommentWriter = document.createElement('span');
-            newReviewCommentWriter.classList.add('review-comment-writer');
-            newReviewCommentWriter.innerText = "Jinmin";
-
-            const newReviewCommentDate = document.createElement('span');
-            newReviewCommentDate.classList.add('review-comment-date');
-            newReviewCommentDate.innerText = '2021-03-01';
-
-            newReviewCommentHeader.appendChild(newReviewCommentWriter);
-            newReviewCommentHeader.appendChild(newReviewCommentDate);
-
-            const newReviewCommentButtons = document.createElement('div');
-            newReviewCommentButtons.classList.add('review-comment-buttons');
-
-            const newReviewCommentSave = document.createElement('button');
-            newReviewCommentSave.classList.add('review-comment-save');
-            newReviewCommentSave.setAttribute('onclick', 'commentSave(this)');
-            newReviewCommentSave.innerText = '저장';
-
-            const newReviewCommentReset = document.createElement('button');
-            newReviewCommentReset.classList.add('review-comment-reset');
-            newReviewCommentReset.setAttribute('onclick', 'commentReset(this)');
-            newReviewCommentReset.innerText = '취소';
-
-            newReviewCommentHeader.appendChild(newReviewCommentButtons);
-            newReviewCommentButtons.appendChild(newReviewCommentSave);
-            newReviewCommentButtons.appendChild(newReviewCommentReset);
-
-            const newReviewCommentInput = document.createElement('div');
-            newReviewCommentInput.classList.add('review-comment-input');
-            newReviewCommentInput.setAttribute('contenteditable', true);
-            newReviewCommentInput.setAttribute('data-placeholder', 'input your think :)');
-            newReviewCommentContent.appendChild(newReviewCommentInput);
-
-            return newReviewCommentContainer;
-        }
-
-        const parent = target.parentNode.parentNode;
+        const targetContainer = target.parentNode.parentNode;
         let hasReviewContainer = false;
 
-        [...parent.children].forEach((item) => {
-            if (item.classList.contains('review-comment-container')) {
-                hasReviewContainer = true;
-            } else {
-                hasReviewContainer = false;
-            }
+        [...targetContainer.children].forEach((item) => {
+            hasReviewContainer = item.classList.contains('review-comment-container');
         });
 
         if (!hasReviewContainer) {
-            parent.appendChild(createReviewComment());
+            targetContainer.appendChild(createReviewComment());
         }
     }
 });
@@ -232,46 +228,26 @@ editorContainer.addEventListener('click', function (event) {
 const commentInputContainer = document.querySelector('.comment-input-container');
 commentInputContainer.addEventListener('click', function (event) {
     const target = event.target;
-
     let isConfirm = false;
 
-    const newComment = document.createElement('li');
-    newComment.classList.add('comment');
-
-    const newCommentWriterImg = document.createElement('img');
-    newCommentWriterImg.classList.add('writer-img');
-    newCommentWriterImg.setAttribute('src', 'img/user-default/7.png');
-    newCommentWriterImg.setAttribute('alt', 'user-image');
-
-    const newSmallTriangle = document.createElement('span');
-    newSmallTriangle.classList.add('small-triangle');
-
-    const newCommentContent = document.createElement('div');
-    newCommentContent.classList.add('comment-content');
+    const newComment = createElement('li', 'comment');
+    const newCommentWriterImg = createElement('img', 'writer-img', undefined, ['src', 'alt'], ['img/user-default/7.png', 'user-image']);
+    const newSmallTriangle = createElement('span', 'small-triangle');
+    const newCommentContent = createElement('div', 'comment-content');
 
     newComment.appendChild(newCommentWriterImg);
     newComment.appendChild(newSmallTriangle);
     newComment.appendChild(newCommentContent);
 
-    const newCommentHeader = document.createElement('div');
-    newCommentHeader.classList.add('comment-header');
-
+    const newCommentHeader = createElement('div', 'comment-header');
     newCommentContent.appendChild(newCommentHeader);
-
-    const newCommentWriter = document.createElement('span');
-    newCommentWriter.classList.add('comment-writer');
-    newCommentWriter.innerText = 'Jinmin';
-
-    const newCommentDate = document.createElement('span');
-    newCommentDate.classList.add('comment-date');
-    newCommentDate.innerText = '2021-03-02';
+    const newCommentWriter = createElement('span', 'comment-writer', 'Jinmin');
+    const newCommentDate = createElement('span', 'comment-date', '2021-03-02');
 
     newCommentHeader.appendChild(newCommentWriter);
     newCommentHeader.appendChild(newCommentDate);
 
-    const newCommentText = document.createElement('div');
-    newCommentText.classList.add('comment-text');
-
+    const newCommentText = createElement('div', 'comment-text');
     const commentList = document.querySelector('.comment-list');
 
     if (target.classList.contains('comment-approve-button')) {
@@ -299,31 +275,63 @@ commentInputContainer.addEventListener('click', function (event) {
 
 const reviewers = document.querySelector('.reviewers');
 reviewers.addEventListener('click', function (event) {
-    const target = event.target;
+    const target = targetControl(event.target);
     const reviewersEditButton = reviewers.querySelector('.reviewers-edit-button');
-    const reviewersEditTitle = reviewers.querySelector('.reviewers-edit-title');
-    const reviewersSelectedList = reviewers.querySelector('.reviewers-selected-list');
-    const reviewersUnselectedList = reviewers.querySelector('.reviewers-unselected-list');
 
     if (!target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
+        reviewerButtonControlActive(target, false);
+    } else if (target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
+        reviewerButtonControlActive(target, true);
+    }
+
+    if (target.classList.contains('reviewers-selected-item') && reviewersEditButton.classList.contains('active')) {
+        reviewersItemAppend(target, true);
+    } else if (target.classList.contains('reviewers-unselected-item') && reviewersEditButton.classList.contains('active')) {
+        reviewersItemAppend(target, false);
+    }
+});
+
+function targetControl(target) {
+    if (target.closest('.reviewers-selected-item')) {
+        target = target.closest('.reviewers-selected-item');
+    } else if (target.closest('.reviewers-unselected-item')) {
+        target = target.closest('.reviewers-unselected-item');
+    } else {
+        return target;
+    }
+
+    return target;
+}
+
+function reviewersItemAppend(target, isSelected) {
+    if (!isSelected) {
+        const reviewersSelectedList = reviewers.querySelector('.reviewers-selected-list');
+        target.classList.replace('reviewers-unselected-item', 'reviewers-selected-item');
+        reviewersSelectedList.appendChild(target);
+    } else {
+        const reviewersUnselectedList = reviewers.querySelector('.reviewers-unselected-list');
+        target.classList.replace('reviewers-selected-item', 'reviewers-unselected-item');
+        reviewersUnselectedList.appendChild(target);
+    }
+
+    return target;
+}
+
+function reviewerButtonControlActive(target, isActive) {
+    const reviewersUnselectedList = reviewers.querySelector('.reviewers-unselected-list');
+    const reviewersEditTitle = reviewers.querySelector('.reviewers-edit-title');
+
+    if (!isActive) {
         target.classList.replace('fa-user-edit', 'fa-sign-out-alt');
         target.classList.add('active');
         reviewersUnselectedList.classList.add('view');
         reviewersEditTitle.classList.add('view');
-    } else if (target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
+    } else {
         target.classList.replace('fa-sign-out-alt', 'fa-user-edit');
         target.classList.remove('active');
         reviewersUnselectedList.classList.remove('view');
         reviewersEditTitle.classList.remove('view');
     }
 
-    if (target.classList.contains('reviewers-selected-item') && reviewersEditButton.classList.contains('active')) {
-        target.classList.replace('reviewers-selected-item', 'reviewers-unselected-item');
-        reviewersUnselectedList.appendChild(target);
-    } else if (target.classList.contains('reviewers-unselected-item') && reviewersEditButton.classList.contains('active')) {
-        target.classList.replace('reviewers-unselected-item', 'reviewers-selected-item');
-        reviewersSelectedList.appendChild(target);
-    } else if (target.classList.contains('reviewers-edit-button')) {
-
-    }
-});
+    return target;
+}

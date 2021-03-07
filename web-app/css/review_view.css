@@ -210,7 +210,6 @@ body {
     width: 20vw;
     height: 10vh;
     font-size: large;
-    /*border: 1px solid var(--gray);*/
     transition: all 0.3s;
     cursor: pointer;
     background-color: var(--white);
@@ -349,13 +348,12 @@ body {
 .review-comment-container {
     position: absolute;
     top: 0;
-    right: -19vw;
-    width: 18vw;
-    /*z-index: 5;*/
+    right: -17vw;
+    width: 16vw;
 }
 
 .review-comment-container:hover {
-    z-index: 100;
+    z-index: 10;
 }
 
 .review-comment-header:before {
@@ -369,15 +367,6 @@ body {
     background-color: var(--blue-gray-white);
     transform: rotate(45deg);
 }
-
-
-.review-comment-content {
-    width: 90%;
-    background-color: var(--white);
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
 
 .review-comment-header {
     padding: 1vh 1vw;
@@ -400,30 +389,31 @@ body {
     font-weight: normal;
 }
 
-.review-comment-buttons {
-    float: right;
-}
-
 .review-comment-save {
+    float: right;
     padding: 0 0.5vh;
 }
 
 .review-comment-reset {
+    float: right;
     margin-left: 1vh;
     padding: 0 0.5vh;
 }
 
+
 .review-comment-input {
     min-height: 5vh;
-    border-radius: 0 0 5px;
+    border-radius: 0 0 5px 5px;
     padding: 1vh;
     font-size: medium;
     outline: none;
     box-sizing: border-box;
+    background-color: var(--white);
 }
 
 .review-comment-input[contentEditable=true]:empty:not(:focus):before {
     content: attr(data-placeholder);
+    font-family: Handon3gyeopsal300g, sans-serif;
     font-size: large;
     color: var(--gray);
 }
@@ -465,7 +455,6 @@ body {
     clear: both;
 }
 
-/*.reviewers-list,*/
 .reviewers-selected-list,
 .reviewers-unselected-list {
     position: relative;
@@ -478,7 +467,6 @@ body {
     border-radius: 0;
 }
 
-/*.reviewers-item,*/
 .reviewers-selected-item,
 .reviewers-unselected-item {
     padding: 5px;
@@ -494,21 +482,18 @@ body {
     cursor: pointer;
 }
 
-/*.reviewers-item:last-child,*/
 .reviewers-selected-item:last-child,
 .reviewers-unselected-item {
     border-bottom: none;
     border-radius: 0 0 5px 5px;
 }
 
-/*.reviewers-item:hover,*/
 .reviewers-selected-item:hover,
 .reviewers-unselected-item:hover {
     background-color: var(--white);
     font-weight: bold;
 }
 
-/*.reviewers-item-img,*/
 .reviewers-selected-item-img,
 .reviewers-unselected-item-img {
     width: 30px;
@@ -518,7 +503,6 @@ body {
 }
 
 .reviewers-edit {
-    /*display: none;*/
     position: absolute;
     top: 4vh;
     width: 100%;
