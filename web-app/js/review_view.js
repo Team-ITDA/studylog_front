@@ -335,3 +335,12 @@ function reviewerButtonControlActive(target, isActive) {
 
     return target;
 }
+
+const scrollTopButton = document.querySelector('.scroll-top-button');
+window.addEventListener('scroll', function (event) {
+    if (window.pageYOffset > 100) {
+        scrollTopButton.classList.add('active');
+    } else {
+        scrollTopButton.classList.remove('active');
+    }
+});
