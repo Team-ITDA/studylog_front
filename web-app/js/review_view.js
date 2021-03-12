@@ -121,39 +121,52 @@ tuiEditorContentsChildrenArray.forEach((element) => {
     if (element.children.length === 0 || element.nodeName === 'PRE' || element.nodeName === 'P') {
         editorMouseEvent(element);
 
-        const plusButton = createElement('div', 'plus-buttons');
-        const tag = createElement('i', ['fas', 'fa-plus-square', 'plus-buttons-icon']);
-        plusButton.appendChild(tag);
+        const plusButton = createPlusButton();
         element.appendChild(plusButton);
-
     } else {
         const tuiEditorContentsChildrenArrayChildrenArray = [...element.children];
         tuiEditorContentsChildrenArrayChildrenArray.forEach((el) => {
             editorMouseEvent(el);
 
-            const plusButton = createElement('div', 'plus-buttons');
-            const tag = createElement('i', ['fas', 'fa-plus-square', 'plus-buttons-icon']);
-            plusButton.appendChild(tag);
-            el.append(plusButton);
+            const plusButton = createPlusButton();
+            el.appendChild(plusButton);
         });
     }
 });
 
+function createPlusButton() {
+    const plusButton = createElement('div', 'plus-buttons');
+    const tag = createElement('i', ['fas', 'fa-plus-square', 'plus-buttons-icon']);
+    plusButton.appendChild(tag);
+
+    return plusButton;
+}
+
 function commentSave(item) {
-    const isConfirm = confirm('Would you like to leave this message?');
+    const isConfirm = confirm('리뷰를 남기시겠습니까?');
+
     if (isConfirm) {
         const itemContainer = item.closest('.review-comment-container');
-        const resetButton = itemContainer.querySelector('.review-comment-reset');
-        const comment = itemContainer.querySelector('.review-comment-input');
+        const itemContents = item.closest('.review-comment-contents');
+        const button = itemContainer.previousSibling.childNodes.item(0);
+        button.classList.replace('fa-plus-square', 'fa-comment-dots');
+        button.classList.add('comment-saved');
+        const resetButton = itemContents.querySelector('.review-comment-reset');
+        const commentInput = itemContents.querySelector('.review-comment-input');
+        itemContainer.style.display = 'none';
         item.remove();
         resetButton.remove();
-        comment.setAttribute('contenteditable', false);
+        commentInput.setAttribute('contenteditable', false);
     }
 }
 
 function commentReset(item) {
     const itemContainer = item.closest('.review-comment-container');
-    itemContainer.remove();
+    const itemContents = item.closest('.review-comment-contents');
+    if (itemContainer.children.length > 1) {
+        const commentInput = itemContents.querySelector('.review-comment-input');
+        commentInput.innerText = '';
+    }
 }
 
 function createElement(tagName, className, text, attributeNames, attributeValues) {
@@ -189,9 +202,9 @@ function createElement(tagName, className, text, attributeNames, attributeValues
 
 
 function createReviewComment() {
-    const newReviewCommentContainer = createElement('div', ['review-comment-container', 'ㅅㅂ']);
+    const newReviewCommentContents = createElement('div', 'review-comment-contents');
     const newReviewCommentHeader = createElement('div', 'review-comment-header');
-    newReviewCommentContainer.appendChild(newReviewCommentHeader);
+    newReviewCommentContents.appendChild(newReviewCommentHeader);
 
     const newReviewCommentWriter = createElement('span', 'review-comment-writer', 'Jinmin');
     const newReviewCommentDate = createElement('span', 'review-comment-date', '2021-03-01');
@@ -203,13 +216,15 @@ function createReviewComment() {
     newReviewCommentHeader.appendChild(newReviewCommentSave);
 
     const newReviewCommentInput = createElement('div', 'review-comment-input', undefined, ['contenteditable', 'data-placeholder'], ['true', 'input your think :)']);
-    newReviewCommentContainer.appendChild(newReviewCommentInput);
+    newReviewCommentContents.appendChild(newReviewCommentInput);
 
-    return newReviewCommentContainer;
+    return newReviewCommentContents;
 }
 
 editorContainer.addEventListener('click', function (event) {
     const target = event.target;
+    console.log(target);
+
     if (target.classList.contains('plus-buttons-icon')) {
         const targetContainer = target.parentNode.parentNode;
         let hasReviewContainer = false;
@@ -219,10 +234,43 @@ editorContainer.addEventListener('click', function (event) {
         });
 
         if (!hasReviewContainer) {
-            targetContainer.appendChild(createReviewComment());
+            const newReviewCommentContainer = createElement('div', 'review-comment-container');
+            newReviewCommentContainer.appendChild(createReviewComment());
+            targetContainer.appendChild(newReviewCommentContainer);
         }
     }
+
+    if (target.classList.contains('comment-saved')) {
+        const targetContainer = target.parentNode.parentNode.children.item(length - 1);
+        console.log(target.parentNode.parentNode.children.item(length - 1));
+        // console.log(targetContainer);
+        targetContainer.style.display = 'block';
+        const addComment = createReviewComment();
+        targetContainer.appendChild(addComment);
+
+        // addComment.forEach((element) => {
+        //     targetContainer.appendChild(element);
+        // });
+    }
 });
+
+/*
+function addReviewComment() {
+    const newReviewCommentHeader = createElement('div', 'review-comment-header');
+    const newReviewCommentWriter = createElement('span', 'review-comment-writer', 'Jinmin');
+    const newReviewCommentDate = createElement('span', 'review-comment-date', '2021-03-01');
+    const newReviewCommentSave = createElement('button', 'review-comment-save', '저장', 'onclick', 'commentSave(this)');
+    const newReviewCommentReset = createElement('button', 'review-comment-reset', '취소', 'onclick', 'commentReset(this)');
+    newReviewCommentHeader.appendChild(newReviewCommentWriter);
+    newReviewCommentHeader.appendChild(newReviewCommentDate);
+    newReviewCommentHeader.appendChild(newReviewCommentReset);
+    newReviewCommentHeader.appendChild(newReviewCommentSave);
+
+    const newReviewCommentInput = createElement('div', 'review-comment-input', undefined, ['contenteditable', 'data-placeholder'], ['true', 'input your think :)']);
+
+    return [newReviewCommentHeader, newReviewCommentInput];
+}
+*/
 
 
 const commentInputContainer = document.querySelector('.comment-input-container');
@@ -278,16 +326,14 @@ reviewers.addEventListener('click', function (event) {
     const target = targetControl(event.target);
     const reviewersEditButton = reviewers.querySelector('.reviewers-edit-button');
 
-    if (!target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
-        reviewerButtonControlActive(target, false);
-    } else if (target.classList.contains('active') && target.classList.contains('reviewers-edit-button')) {
-        reviewerButtonControlActive(target, true);
+    if (target === reviewersEditButton) {
+        const editButtonIsActive = target.classList.contains('active') && target.classList.contains('reviewers-edit-button');
+        activateReviewerButtonControl(target, editButtonIsActive);
     }
 
-    if (target.classList.contains('reviewers-selected-item') && reviewersEditButton.classList.contains('active')) {
-        reviewersItemAppend(target, true);
-    } else if (target.classList.contains('reviewers-unselected-item') && reviewersEditButton.classList.contains('active')) {
-        reviewersItemAppend(target, false);
+    if (target.closest('.reviewers-unselected-list')) {
+        const isTargetUnselectedItem = target.classList.contains('reviewers-unselected-item') && reviewersEditButton.classList.contains('active');
+        appendReviewersItem(target, isTargetUnselectedItem);
     }
 });
 
@@ -303,7 +349,24 @@ function targetControl(target) {
     return target;
 }
 
-function reviewersItemAppend(target, isSelected) {
+function appendReviewersItem(target, isUnselected) {
+    const username = target.innerText;
+    const isAppendConfirm = confirm(`${username} 님을 reviewer로 등록하시겠습니까? \n (한번 등록하면 삭제할 수 없습니다.)`);
+
+    if (isAppendConfirm) {
+        if (isUnselected) {
+            const reviewersSelectedList = reviewers.querySelector('.reviewers-selected-list');
+            target.classList.replace('reviewers-unselected-item', 'reviewers-selected-item');
+            reviewersSelectedList.appendChild(target);
+        }
+    }
+
+    return target;
+}
+
+/*
+
+function appendReviewersItem(target, isSelected) {
     if (!isSelected) {
         const reviewersSelectedList = reviewers.querySelector('.reviewers-selected-list');
         target.classList.replace('reviewers-unselected-item', 'reviewers-selected-item');
@@ -316,8 +379,10 @@ function reviewersItemAppend(target, isSelected) {
 
     return target;
 }
+*/
 
-function reviewerButtonControlActive(target, isActive) {
+
+function activateReviewerButtonControl(target, isActive) {
     const reviewersUnselectedList = reviewers.querySelector('.reviewers-unselected-list');
     const reviewersEditTitle = reviewers.querySelector('.reviewers-edit-title');
 
