@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Studylog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"/>
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"/>
+    <link rel="stylesheet" href="css/review_view.css">
+
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/b63e743ce0.js" crossorigin="anonymous"></script>
+    <script src="js/review_view.js?ver=1.111" defer></script>
+</head>
+<body>
+<iframe class="frame-header" src="global/header.html"></iframe>
+<iframe class="frame-sidebar" src="global/sidebar.html"></iframe>
+
+<div class="main-container">
+    <div class="main-container-header">
+        <h2 class="title">이것은 제목입니다.</h2>
+        <ul class="hashtags">
+            <li class="hashtags-item">#영곤</li>
+            <li class="hashtags-item">#진민</li>
+            <li class="hashtags-item">#스터디로그</li>
+        </ul>
+        <span class="view-number">291,323,239 views</span>
+    </div>
+
+    <div class="editor-container">
+
+    </div>
+
+    <div class="reviewers">
+        <div class="reviewers-header">
+            <h3 class="reviewers-title">reviewers</h3>
+            <i class="fas fa-user-edit reviewers-edit-button"></i>
+        </div>
+        <div class="reviewers-edit">
+            <ul class="reviewers-selected-list">
+                <li class="reviewers-selected-item">
+                    <img class="reviewers-selected-item-img" src="img/user-default/1.png" alt="reviewer-01">
+                    <span class="reviewers-selected-item-name">Jinmin</span>
+                </li>
+                <li class="reviewers-selected-item">
+                    <img class="reviewers-selected-item-img" src="img/user-default/2.png" alt="reviewer-02">
+                    <span class="reviewers-selected-item-name">zeroGone</span>
+                </li>
+            </ul>
+            <h4 class="reviewers-edit-title">Select the person to register.</h4>
+            <ul class="reviewers-unselected-list">
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/4.png"
+                         alt="reviewers-unselected-01">
+                    <span class="reviewers-unselected-item-name">minsub</span>
+                </li>
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/3.png"
+                         alt="reviewers-unselected-02">
+                    <span class="reviewers-unselected-item-name">hugi</span>
+                </li>
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/5.png"
+                         alt="reviewers-unselected-03">
+                    <span class="reviewers-unselected-item-name">wisdom</span>
+                </li>
+                <li class="reviewers-unselected-item">
+                    <img class="reviewers-unselected-item-img" src="img/user-default/7.png"
+                         alt="reviewers-unselected-04">
+                    <span class="reviewers-unselected-item-name">hyung1</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="writer">
+        <img class="writer-image" src="img/user-default/5.png" alt="writer"/>
+        <h3 class="writer-name">zeroGone</h3>
+    </div>
+
+    <div class="comment-divider">
+        comment
+    </div>
+    <ul class="comment-list">
+        <li class="comment">
+            <img class="writer-img" src="img/user-default/5.png" alt="user img"/>
+            <span class="small-triangle"></span>
+            <div class="comment-content">
+                <div class="comment-header">
+                    <span class="comment-writer">Jinmin Yang</span>
+                    <span class="comment-date">2021-02-19</span>
+                </div>
+                <div class="comment-text">is gooooooooooooooooooooood!</div>
+            </div>
+        </li>
+        <li class="comment">
+            <img class="writer-img" src="img/user-default/6.png" alt="user img"/>
+            <div class="small-triangle"></div>
+            <div class="comment-content">
+                <div class="comment-header">
+                    <span class="comment-writer">zeroGone</span>
+                    <span class="comment-date">2021-02-19</span>
+                </div>
+                <div class="comment-text">Amazing</div>
+            </div>
+        </li>
+    </ul>
+    <div class="comment-input-container">
+        <div class="comment-input" contenteditable=true data-placeholder="input your think :)"></div>
+        <button class="comment-save-button" value="Comment">Comment</button>
+        <button class="comment-approve-button" value="Approve">Approve</button>
+    </div>
+    <div class="page-control">
+        <div class="prev-page">
+            <i class="fas fa-chevron-circle-left prev-page-button"></i>
+            <h3 class="prev-title">이전 페이지 제목</h3>
+            <span class="prev-description">이전 페이지에 대한 설명글이전 페이지에 대한 설명글</span>
+        </div>
+        <div class="next-page">
+            <i class="fas fa-chevron-circle-right next-page-button"></i>
+            <h3 class="next-title">이전 페이지 제목</h3>
+            <span class="next-description">이전 페이지에 대한 설명글이전 페이지에 대한 설명글이전 페이지에 대한 설명글</span>
+        </div>
+    </div>
+    <a href="#" class="scroll-top-button">
+        <i class="fas fa-arrow-alt-circle-right"></i>
+    </a>
+</div>
+
+<iframe class="frame-footer" src="global/footer.html"></iframe>
+</body>
+</html>
